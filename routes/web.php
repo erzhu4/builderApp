@@ -12,5 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('baseView');
 });
+
+Route::get('/portfolio', 'BaseController@portfolio');

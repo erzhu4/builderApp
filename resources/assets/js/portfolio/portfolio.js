@@ -1,5 +1,3 @@
-$ = require('jquery');
-
 window.Vue = require('vue');
 
 var portfolioComponent = require('./portfolio.vue');

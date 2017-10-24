@@ -1,9 +1,10 @@
 <!doctype html>
 <html>
-<head>
-
-</head>
+<head></head>
 <body>
-    portfolio!!!
+    <div id="portfolio-vue">
+        <portfolio></portfolio>
+    </div>
+    <script src="js/portfolio.js"></script>
 </body>
 </html>

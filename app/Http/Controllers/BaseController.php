@@ -10,4 +10,9 @@ class BaseController extends Controller
     {
         return view('portfolio');
     }
+
+    public function test()
+    {
+        return view('test');
+    }
 }

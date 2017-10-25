@@ -1,9 +1,6 @@
 <template>
     <div class="page-container">
-        <main-nav></main-nav>
-        <div class="container" style="border:blue solid 1px; height:1500px;">
-            sdafasdfsadf
-        </div>
+        <main-nav @changeNav="updateCurrentPage"></main-nav>
     </div>
 </template>
 
@@ -11,6 +8,16 @@
     import MainNav from './MainNav.vue';
 
     export default {
-        components : {MainNav}
+        data() {
+            return {
+                currentPage: 'home'
+            };
+        },
+        components : {MainNav},
+        methods: {
+            updateCurrentPage(val){
+
+            }
+        }
     }
 </script>

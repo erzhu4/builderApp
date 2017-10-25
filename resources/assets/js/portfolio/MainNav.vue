@@ -11,22 +11,19 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-2">
-                        Home
+                        <a @click="changeNav('home')">Home</a>
                     </div>
                     <div class="col-lg-2">
-                        About
+                        <a @click="changeNav('about')">About</a>
                     </div>
                     <div class="col-lg-2">
-                        Games
+                        <a @click="changeNav('games')">Games</a>
                     </div>
                     <div class="col-lg-2">
-                        Projects
+                        <a @click="changeNav('projects')">Projects</a>
                     </div>
                     <div class="col-lg-2">
-                        Resume
-                    </div>
-                    <div class="col-lg-2">
-                        Contact
+                        <a @click="changeNav('contacts')">Contact</a>
                     </div>
                 </div>
             </div>
@@ -36,13 +33,22 @@
 
 <script>
     export default {
+        props: [],
 
+        methods: {
+            changeNav(val) {
+                this.$emit('changeNav', val);
+            }
+        }
     }
 </script>
 
 <style scoped>
+    a:hover {
+        cursor: pointer;
+    }
+
     .main-nav {
-        border: 2px solid red;
         background:green;
     }
 </style>

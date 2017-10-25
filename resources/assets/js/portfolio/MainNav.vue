@@ -1,6 +1,8 @@
 <template>
     <div class="row main-nav">
-        main nav
+        <div class="container">
+            main nav
+        </div>
     </div>
 </template>
 

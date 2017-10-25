@@ -1,7 +1,7 @@
 <template>
     <div class="page-container">
         <main-nav></main-nav>
-        <div class="row">
+        <div class="container">
             sdafasdfsadf
         </div>
     </div>

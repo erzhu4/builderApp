@@ -1,7 +1,7 @@
 <template>
     <div class="page-container">
         <main-nav></main-nav>
-        <div class="container">
+        <div class="container" style="border:blue solid 1px; height:1500px;">
             sdafasdfsadf
         </div>
     </div>

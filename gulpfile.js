@@ -11,5 +11,5 @@ elixir(function(mix) {
     mix.webpack('resources/assets/js/bootstrap.js', 'public/js');
 
     //compile vue
-    mix.webpack('resources/assets/js/portfolio/portfolio.js', 'public/js');
+    mix.webpack('resources/assets/js/portfolio.js', 'public/js');
 });

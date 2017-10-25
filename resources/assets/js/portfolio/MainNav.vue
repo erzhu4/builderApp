@@ -23,7 +23,7 @@
                         <a @click="changeNav('projects')">Projects</a>
                     </div>
                     <div class="col-lg-2">
-                        <a @click="changeNav('contacts')">Contact</a>
+                        <a @click="changeNav('contact')">Contact</a>
                     </div>
                 </div>
             </div>

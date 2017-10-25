@@ -6,7 +6,7 @@ elixir(function(mix) {
     //copy images
     mix.copy('resources/images', 'public/images');
 
-    mix.copy('resources/css', 'public/css');
+    mix.copy('resources/assets/css/bootstrap.css', 'public/css');
 
     mix.webpack('resources/assets/js/bootstrap.js', 'public/js');
 

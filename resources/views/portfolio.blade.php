@@ -1,11 +1,12 @@
 <!doctype html>
 <html>
 <head>
-    <link href="css/app.css" rel="stylesheet">
+    <title>YAY!</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
     <script src="js/bootstrap.js"></script>
 </head>
 <body>
-    <div id="portfolio-vue" class="container">
+    <div id="portfolio-vue">
         <portfolio></portfolio>
     </div>
     <script src="js/portfolio.js"></script>

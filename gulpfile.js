@@ -10,6 +10,6 @@ elixir(function(mix) {
 
     mix.webpack('resources/assets/js/bootstrap.js', 'public/js');
 
-    //compile vue
-    mix.webpack('resources/assets/js/portfolio.js', 'public/js');
+    //compile portfolio
+    mix.webpack('resources/assets/js/portfolio.js', 'public/js/portfolio');
 });

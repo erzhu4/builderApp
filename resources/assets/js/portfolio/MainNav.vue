@@ -54,6 +54,7 @@
 
     .main-nav {
         background: green;
+        z-index: 9999;
     }
 
     .fix-nav {

@@ -9,3 +9,9 @@
 
     }
 </script>
+
+<style scoped>
+    .container {
+        background: red;
+    }
+</style>

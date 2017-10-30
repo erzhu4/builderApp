@@ -1,11 +1,13 @@
 <template>
     <div class="page-container" id="main-portfolio-container">
         <main-nav @changeNav="updateCurrentPage" :fix-top="fixTop"></main-nav>
-        <home v-if="isActivePage('home')"></home>
-        <about v-if="isActivePage('about')"></about>
-        <games v-if="isActivePage('games')"></games>
-        <projects v-if="isActivePage('projects')"></projects>
-        <contact v-if="isActivePage('contact')"></contact>
+        <transition name="drawerSlide">
+            <home v-if="isActivePage('home')"></home>
+            <about v-if="isActivePage('about')"></about>
+            <games v-if="isActivePage('games')"></games>
+            <projects v-if="isActivePage('projects')"></projects>
+            <contact v-if="isActivePage('contact')"></contact>
+        </transition>
     </div>
 </template>
 
@@ -56,3 +58,24 @@
         }
     }
 </script>
+
+<style>
+    .drawerSlide-enter-active,
+    .drawerSlide-leave-active {
+        opacity: 0;
+        max-height: 2000px;
+    }
+    .drawerSlide-enter-active {
+        transition: all 1.0s;
+    }
+    .drawerSlide-leave-active {
+        transition: all 0.5s;
+    }
+    .drawerSlide-enter-to {
+        opacity: 1;
+    }
+    .drawerSlide-enter,
+    .drawerSlide-leave-to {
+        max-height: 0px;
+    }
+</style>

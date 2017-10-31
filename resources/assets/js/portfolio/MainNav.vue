@@ -9,7 +9,7 @@
         </div>
         <div class="row nav-bottom" :class="{ 'fix-nav': fixTop }">
             <div class="container">
-                <div class="row">
+                <div class="row menu-row">
                     <div class="col-lg-2 nav-button">
                         <a @click="changeNav('home')">Home</a>
                     </div>
@@ -44,6 +44,10 @@
 </script>
 
 <style scoped>
+    .menu-row {
+        height: 100%;
+    }
+
     .nav-button {
         text-align: center;
     }

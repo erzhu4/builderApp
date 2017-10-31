@@ -73,6 +73,7 @@
     .nav-bottom {
         width: 100%;
         height:50px;
+        margin: 0px;
         background: green;
     }
 </style>

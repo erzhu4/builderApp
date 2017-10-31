@@ -10,20 +10,20 @@
         <div class="row nav-bottom" :class="{ 'fix-nav': fixTop }">
             <div class="container">
                 <div class="row menu-row">
-                    <div class="col-lg-2 nav-button">
-                        <a @click="changeNav('home')">Home</a>
+                    <div class="col-lg-2 nav-button" @click="changeNav('home')">
+                        Home
                     </div>
-                    <div class="col-lg-2 nav-button">
-                        <a @click="changeNav('about')">About</a>
+                    <div class="col-lg-2 nav-button" @click="changeNav('about')">
+                        About
                     </div>
-                    <div class="col-lg-2 nav-button">
-                        <a @click="changeNav('games')">Games</a>
+                    <div class="col-lg-2 nav-button" @click="changeNav('games')">
+                        Games
                     </div>
-                    <div class="col-lg-2 nav-button">
-                        <a @click="changeNav('projects')">Projects</a>
+                    <div class="col-lg-2 nav-button" @click="changeNav('projects')">
+                        Projects
                     </div>
-                    <div class="col-lg-2 nav-button">
-                        <a @click="changeNav('contact')">Contact</a>
+                    <div class="col-lg-2 nav-button" @click="changeNav('contact')">
+                        Contact
                     </div>
                 </div>
             </div>
@@ -58,12 +58,12 @@
 
     .main-nav {
         background: green;
-        z-index: 9999;
     }
 
     .fix-nav {
         top: 0;
         position: fixed;
+        z-index: 9999;
     }
 
     .nav-top {

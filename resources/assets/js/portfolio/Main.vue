@@ -39,10 +39,8 @@
                 var that = this;
                 scrollElement.addEventListener('scroll', function(e){
                     if (window.pageYOffset > 188 && !that.fixTop){
-                        console.log("FIX IT");
                         that.fixTop = true;
                     } else if (window.pageYOffset < 188 && that.fixTop) {
-                        console.log("UNFIX IT");
                         that.fixTop = false;
                     }
                 });

@@ -58,6 +58,9 @@
 </script>
 
 <style>
+    .page-container {
+        background-color: #dfe3e8;
+    }
     .drawerSlide-enter-active,
     .drawerSlide-leave-active {
         opacity: 0;

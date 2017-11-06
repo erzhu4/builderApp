@@ -1,6 +1,7 @@
 <template>
     <div class="container" style="border:purple solid 1px; height:1500px;">
-        GAMES
+        <a href="#" @click="$emit('showOverlay', 'galaxy')">Galaxy</a>
+        <a href="#" @click="$emit('showOverlay', 'snake')">Snake</a>
     </div>
 </template>
 
@@ -12,6 +13,6 @@
 
 <style scoped>
     .container {
-        background: blue;
+        background: transparent;
     }
 </style>

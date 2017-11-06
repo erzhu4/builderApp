@@ -4,10 +4,11 @@
         <transition name="drawerSlide">
             <home v-if="isActivePage('home')"></home>
             <about v-if="isActivePage('about')"></about>
-            <games v-if="isActivePage('games')"></games>
+            <games v-if="isActivePage('games')" @showOverlay="showOverlay"></games>
             <projects v-if="isActivePage('projects')"></projects>
             <contact v-if="isActivePage('contact')"></contact>
         </transition>
+        <overlay v-if="overlayVisible"></overlay>
     </div>
 </template>
 
@@ -18,12 +19,14 @@
     import Games from './Games.vue';
     import Projects from './Projects.vue';
     import Contact from './Contact.vue';
+    import Overlay from './overlay.vue';
 
     export default {
         data() {
             return {
                 fixTop: false,
-                currentPage: 'home'
+                currentPage: 'home',
+                overlayVisible: false
             };
         },
 
@@ -31,7 +34,7 @@
             this.addScrollHandler();
         },
 
-        components : {MainNav, Home, About, Games, Projects, Contact},
+        components : {MainNav, Home, About, Games, Projects, Contact, Overlay},
 
         methods: {
             addScrollHandler(){
@@ -44,6 +47,13 @@
                         that.fixTop = false;
                     }
                 });
+            },
+
+
+            showOverlay(component){
+                console.log("show overlay");
+                console.log(component);
+                this.overlayVisible = true;
             },
 
             updateCurrentPage(val){

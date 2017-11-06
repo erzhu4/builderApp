@@ -1,7 +1,7 @@
 <template>
-    <div class="background-overlay">
+    <div class="background-overlay" @click="$emit('closeOverlay')">
         <div class="overlay-modal">
-
+            asdfsdafsaf
         </div>
     </div>
 </template>
@@ -10,6 +10,7 @@
     .background-overlay {
         background: black;
         position: absolute;
+        text-align: center;
         opacity: 0.5;
         z-index: 10;
         width: 100%;
@@ -19,6 +20,7 @@
 
     .overlay-modal {
         background: white;
+        position: absolute;
         z-index: 20;
     }
 </style>

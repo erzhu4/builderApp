@@ -8,7 +8,7 @@
             <projects v-if="isActivePage('projects')"></projects>
             <contact v-if="isActivePage('contact')"></contact>
         </transition>
-        <overlay v-if="overlayVisible"></overlay>
+        <overlay v-if="overlayVisible" @closeOverlay="closeOverlay"></overlay>
     </div>
 </template>
 
@@ -51,9 +51,11 @@
 
 
             showOverlay(component){
-                console.log("show overlay");
-                console.log(component);
                 this.overlayVisible = true;
+            },
+
+            closeOverlay() {
+                this.overlayVisible = false;
             },
 
             updateCurrentPage(val){

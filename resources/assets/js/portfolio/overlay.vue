@@ -12,7 +12,7 @@
         position: absolute;
         text-align: center;
         opacity: 0.5;
-        z-index: 10;
+        z-index: 8;
         width: 100%;
         height: 120%;
         top: 0;
@@ -20,7 +20,6 @@
 
     .overlay-modal {
         background: white;
-        position: absolute;
-        z-index: 20;
+        opacity: 1;
     }
 </style>

@@ -1,9 +1,9 @@
-(function () {
+(function() {
   if (typeof Galaxy === "undefined") {
     window.Galaxy = {};
   }
 
-  var Game = Galaxy.Game = function () {
+  var Game = Galaxy.Game = function() {
     this.Galaxy = [];
     this.bullets = [];
     this.ships = [];
@@ -23,7 +23,7 @@
   Game.DIM_Y = 600;
   Game.FPS = 32;
 
-  Game.prototype.add = function (object) {
+  Game.prototype.add = function(object) {
     if (object instanceof Galaxy.Enemy) {
       this.Galaxy.push(object);
     } else if (object instanceof Galaxy.Bullet) {
@@ -35,20 +35,20 @@
     }
   };
 
-  Game.prototype.addEnemies = function () {
+  Game.prototype.addEnemies = function() {
     for (var i = 0; i < this.numEnemies; i++) {
       this.add(new Galaxy.Enemy({ game: this }));
     }
   };
 
-  Game.prototype.addBigEnemy = function () {
+  Game.prototype.addBigEnemy = function() {
     if (this.bigEnemies.length > 3){
       this.bigEnemies.shift(1);
     }
 	  this.bigEnemies.push(new Galaxy.BigEnemy( {game: this} ));
   };
 
-  Game.prototype.addShip = function () {
+  Game.prototype.addShip = function() {
     var ship = new Galaxy.Ship({
       pos: [Galaxy.Game.DIM_X/2, -550],
       game: this
@@ -58,28 +58,28 @@
     return ship;
   };
 
-  Game.prototype.addExplosion = function (pos) {
+  Game.prototype.addExplosion = function(pos) {
   	if (this.explosions.length > 10){
   		this.explosions.shift(1);
   	}
   	this.explosions.push(new Galaxy.Explosion(pos, this))
   };
 
-  Game.prototype.addBigExplosion = function (pos) {
+  Game.prototype.addBigExplosion = function(pos) {
     if (this.bigExplosions.length > 2){
       this.bigExplosions.shift(1);
     }
     this.bigExplosions.push(new Galaxy.BigExplosion(pos, this))
   };
 
-  Game.prototype.addSpark = function (pos) {
+  Game.prototype.addSpark = function(pos) {
     if (this.sparks.length > 8){
       this.sparks.shift(1);
     }
     this.sparks.push(new Galaxy.Spark(pos, this));
   };
 
-  Game.prototype.addPuff = function (pos) {
+  Game.prototype.addPuff = function(pos) {
     if (this.puffs.length > 8){
       this.puffs.shift(1);
     }
@@ -90,7 +90,7 @@
     return [].concat(this.ships, this.Galaxy, this.bullets, this.explosions, this.bigEnemies, this.sparks, this.bigExplosions, this.puffs);
   };
 
-  Game.prototype.checkCollisions = function () {
+  Game.prototype.checkCollisions = function() {
     var game = this;
 
     this.allObjects().forEach(function (obj1) {
@@ -105,7 +105,7 @@
     });
   };
 
-  Game.prototype.draw = function (ctx) {
+  Game.prototype.draw = function(ctx) {
     ctx.clearRect(0, 0, Game.DIM_X, Game.DIM_Y);
     ctx.fillStyle = Game.BG_COLOR;
     ctx.fillRect(0, 0, Game.DIM_X, Game.DIM_Y);
@@ -115,12 +115,12 @@
     });
   };
 
-  Game.prototype.isOutOfBounds = function (pos) {
+  Game.prototype.isOutOfBounds = function(pos) {
     return (pos[0] < 0) || (pos[1] < 0) ||
       (pos[0] > Game.DIM_X) || (pos[1] > Game.DIM_Y);
   };
 
-  Game.prototype.moveObjects = function () {
+  Game.prototype.moveObjects = function() {
     if(this.ships[0]){
       if (this.ships[0].pos[0] > Galaxy.Game.DIM_X - 20) {
         this.ships[0].vel = [0,0];
@@ -130,7 +130,7 @@
         this.ships[0].vel = [0,0];
         this.ships[0].pos[0] += 1;
       }
-      this.allObjects().forEach(function (object) {
+      this.allObjects().forEach(function(object) {
         object.move();
       });
     }
@@ -138,7 +138,7 @@
 
 
 
-  Game.prototype.remove = function (object) {
+  Game.prototype.remove = function(object) {
     if (object instanceof Galaxy.Bullet) {
       this.bullets.splice(this.bullets.indexOf(object), 1);
     } else if (object instanceof Galaxy.Enemy) {
@@ -161,12 +161,12 @@
     }
   };
 
-  Game.prototype.step = function () {
+  Game.prototype.step = function() {
     this.moveObjects();
     this.checkCollisions();
   };
 
-  Game.prototype.wrap = function (pos) {
+  Game.prototype.wrap = function(pos) {
     return [
       wrap(pos[0], Game.DIM_X), wrap(pos[1], Game.DIM_Y)
     ];

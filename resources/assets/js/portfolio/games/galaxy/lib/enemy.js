@@ -24,7 +24,6 @@
 
   Enemy.prototype.collideWith = function (otherObject) {
     if (otherObject instanceof Galaxy.Ship) {
-      $(".game-over").removeClass("hide");
       this.game.remove(otherObject);
     }
   };

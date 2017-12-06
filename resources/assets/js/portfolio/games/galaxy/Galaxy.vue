@@ -2,8 +2,8 @@
     <div style="border:solid red 5px;">
         <div class="score-container">Score: <div class="galaxy-score">0</div></div>
         <canvas></canvas><br>
-        <button class="start-button">Start</button>
-        <button class="reset">Reset</button>
+        <button class="start-button" @click="startGame">Start</button>
+        <button class="reset" @click="startGame">Reset</button>
         <div class="game-over hide"> GAME OVER!!!!! </div>
     </div>
 </template>
@@ -24,19 +24,30 @@
     import GameView from './lib/gameView.js';
 
     export default {
+        data(){
+            return {
+                ctx: {},
+                game: {},
+                view: {}
+            };
+        },
+
         mounted(){
             this.initialize();
         },
 
         methods: {
             initialize(){
-                console.log("initialize");
                 var canvasEl = document.getElementsByTagName("canvas")[0];
                 canvasEl.width = Galaxy.Game.DIM_X;
                 canvasEl.height = Galaxy.Game.DIM_Y;
-                var ctx = canvasEl.getContext("2d");
-                var game = new Galaxy.Game();
-                var view = new Galaxy.GameView(game, ctx);
+                this.ctx = canvasEl.getContext("2d");
+                this.game = new Galaxy.Game();
+                this.view = new Galaxy.GameView(this.game, this.ctx);
+            },
+
+            startGame(){
+                this.view.start();
             }
         }
     }

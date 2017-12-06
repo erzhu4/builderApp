@@ -15,7 +15,7 @@
     this.numEnemies = 10;
     this.addEnemies();
     this.space = new Image();
-    this.space.src = "./images/stars.jpg"
+    this.space.src = "./images/portfolio/stars.jpg"
   };
 
   Game.BG_COLOR = "#000000";

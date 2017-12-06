@@ -35,8 +35,8 @@
                 canvasEl.width = Galaxy.Game.DIM_X;
                 canvasEl.height = Galaxy.Game.DIM_Y;
                 var ctx = canvasEl.getContext("2d");
-//                var game = new Galaxy.Game();
-//                var view = new Galaxy.GameView(game, ctx);
+                var game = new Galaxy.Game();
+                var view = new Galaxy.GameView(game, ctx);
             }
         }
     }

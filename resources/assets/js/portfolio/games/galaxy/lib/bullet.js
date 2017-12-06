@@ -6,7 +6,7 @@
   var Bullet = Galaxy.Bullet = function (options) {
 	  this.game = options.game;
     var sprite = new Image();
-    sprite.src = "./images/bullet.png";
+    sprite.src = "./images/portfolio/bullet.png";
     options.radius = Bullet.RADIUS;
     options.sprite = sprite;
     options.dem = 45;

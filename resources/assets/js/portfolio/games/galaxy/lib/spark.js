@@ -8,7 +8,7 @@
 		this.game = game;
 		this.pos = pos;
 		this.sprite = new Image();
-		this.sprite.src = "./images/spark.png";
+		this.sprite.src = "./images/portfolio/spark.png";
 		this.dem = 10;
     Galaxy.ExpandingObject.call(this);
 	};

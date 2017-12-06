@@ -13,7 +13,15 @@
     import MovingObjects from './lib/movingObject.js';
     import ExpandingObjects from './lib/expandingObject.js';
     import Enemy from './lib/enemy.js';
+    import Ship from './lib/ship.js';
+    import Bullet from './lib/bullet.js';
+    import Explosion from './lib/explosion.js';
+    import BigExplosion from './lib/bigExplosion.js';
+    import BigEnemy from './lib/bigenemy.js';
+    import Spark from './lib/spark.js';
+    import Puff from './lib/puff.js';
     import Game from './lib/game.js';
+    import GameView from './lib/gameView.js';
 
     export default {
         mounted(){

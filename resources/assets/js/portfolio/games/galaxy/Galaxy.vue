@@ -1,10 +1,9 @@
 <template>
-    <div style="border:solid red 5px;">
+    <div class="galaxy-container">
         <div class="score-container">Score: <div class="galaxy-score">0</div></div>
         <canvas></canvas><br>
         <button class="start-button" @click="startGame">Start</button>
         <button class="reset" @click="startGame">Reset</button>
-        <div class="game-over hide"> GAME OVER!!!!! </div>
     </div>
 </template>
 
@@ -52,3 +51,13 @@
         }
     }
 </script>
+
+<style scoped>
+    .galaxy-container {
+        text-align: center;
+    }
+
+    .score-container{
+        text-align: left;
+    }
+</style>

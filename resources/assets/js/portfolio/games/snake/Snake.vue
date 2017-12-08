@@ -8,9 +8,9 @@
 </template>
 
 <script>
-    import Enemy from './lib/snake.js';
-    import Ship from './lib/board.js';
-    import Bullet from './lib/snakeView.js';
+    import './lib/snake.js';
+    import './lib/board.js';
+    import './lib/snakeView.js';
 
     export default {
         methods: {

@@ -8,19 +8,19 @@
 </template>
 
 <script>
-    import Utils from './lib/util.js';
-    import MovingObjects from './lib/movingObject.js';
-    import ExpandingObjects from './lib/expandingObject.js';
-    import Enemy from './lib/enemy.js';
-    import Ship from './lib/ship.js';
-    import Bullet from './lib/bullet.js';
-    import Explosion from './lib/explosion.js';
-    import BigExplosion from './lib/bigExplosion.js';
-    import BigEnemy from './lib/bigenemy.js';
-    import Spark from './lib/spark.js';
-    import Puff from './lib/puff.js';
-    import Game from './lib/game.js';
-    import GameView from './lib/gameView.js';
+    import './lib/util.js';
+    import './lib/movingObject.js';
+    import './lib/expandingObject.js';
+    import './lib/enemy.js';
+    import './lib/ship.js';
+    import './lib/bullet.js';
+    import './lib/explosion.js';
+    import './lib/bigExplosion.js';
+    import './lib/bigenemy.js';
+    import './lib/spark.js';
+    import './lib/puff.js';
+    import './lib/game.js';
+    import './lib/gameView.js';
 
     export default {
         data(){

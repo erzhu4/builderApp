@@ -1,5 +1,5 @@
 <template>
-    <div class="page-container" id="main-portfolio-container">
+    <div class="page-container" @click="mainContainerClick" id="main-portfolio-container">
         <main-nav @changeNav="updateCurrentPage" :current-tab="currentPage" :fix-top="fixTop"></main-nav>
         <transition name="drawerSlide">
             <overview class="tab-container" v-if="isActivePage('overview')"></overview>
@@ -18,6 +18,7 @@
     import Projects from './Projects.vue';
     import Contact from './Contact.vue';
     import Overlay from './overlay.vue';
+    import EventBus from '../EventBus.js';
 
     export default {
         data() {
@@ -47,6 +48,9 @@
                 });
             },
 
+            mainContainerClick(){
+                EventBus.$emit('mainContainerClick');
+            },
 
             showOverlay(component){
                 this.overlayVisible = true;

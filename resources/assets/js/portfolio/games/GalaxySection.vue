@@ -22,6 +22,10 @@
         methods: {
             showGalaxyGame(){
                 this.showGalaxy = true;
+            },
+
+            hideGalaxyGame(){
+                this.showGalaxy = false;
             }
         }
     }

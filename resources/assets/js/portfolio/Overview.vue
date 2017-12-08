@@ -5,7 +5,7 @@
 </template>
 
 <script>
-    import TitleSection from './home/TitleSection.vue';
+    import TitleSection from './overview/TitleSection.vue';
 
     export default {
         components: {TitleSection}

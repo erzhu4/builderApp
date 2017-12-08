@@ -2,7 +2,7 @@
     <div class="page-container" id="main-portfolio-container">
         <main-nav @changeNav="updateCurrentPage" :current-tab="currentPage" :fix-top="fixTop"></main-nav>
         <transition name="drawerSlide">
-            <home class="tab-container" v-if="isActivePage('home')"></home>
+            <overview class="tab-container" v-if="isActivePage('overview')"></overview>
             <about class="tab-container" v-if="isActivePage('about')"></about>
             <games class="tab-container" v-if="isActivePage('games')" @showOverlay="showOverlay"></games>
             <projects class="tab-container" v-if="isActivePage('projects')"></projects>
@@ -14,7 +14,7 @@
 
 <script>
     import MainNav from './MainNav.vue';
-    import Home from './Home.vue';
+    import Overview from './Overview.vue';
     import About from './About.vue';
     import Games from './Games.vue';
     import Projects from './Projects.vue';
@@ -25,7 +25,7 @@
         data() {
             return {
                 fixTop: false,
-                currentPage: 'home',
+                currentPage: 'overview',
                 overlayVisible: false
             };
         },
@@ -34,7 +34,7 @@
             this.addScrollHandler();
         },
 
-        components : {MainNav, Home, About, Games, Projects, Contact, Overlay},
+        components : {MainNav, Overview, About, Games, Projects, Contact, Overlay},
 
         methods: {
             addScrollHandler(){

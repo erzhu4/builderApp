@@ -4,15 +4,19 @@
             <h3>Galaxy</h3>
         </div>
         <galaxy v-if="showGalaxy"></galaxy>
-        <h3>Snake</h3>
+        <div class="game-header" @click="showSnakeGame" v-if="!showSnake">
+            <h3>Snake</h3>
+        </div>
+        <snake v-if="showSnake"></snake>
     </div>
 </template>
 
 <script>
+    import Snake from './games/snake/Snake.vue';
     import Galaxy from './games/galaxy/Galaxy.vue';
 
     export default {
-        components: {Galaxy},
+        components: {Galaxy, Snake},
 
         data(){
             return {
@@ -24,6 +28,10 @@
         methods: {
             showGalaxyGame(){
                 this.showGalaxy = true;
+            },
+
+            showSnakeGame(){
+                this.showSnake = true;
             }
         }
     }

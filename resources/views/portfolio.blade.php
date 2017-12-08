@@ -3,6 +3,7 @@
     <head>
         <title>YAY!</title>
         <link href="/css/bootstrap.css" rel="stylesheet">
+        <link href="/css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
         <script src="/js/bootstrap.js"></script>
     </head>
     <body>

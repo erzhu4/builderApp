@@ -8,6 +8,8 @@ elixir(function(mix) {
 
     mix.copy('resources/assets/css/bootstrap.css', 'public/css');
 
+    mix.copy('resources/assets/css/font-awesome', 'public/css/font-awesome');
+
     mix.webpack('resources/assets/js/bootstrap.js', 'public/js');
 
     //compile portfolio

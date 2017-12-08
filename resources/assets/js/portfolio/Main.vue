@@ -2,11 +2,11 @@
     <div class="page-container" id="main-portfolio-container">
         <main-nav @changeNav="updateCurrentPage" :fix-top="fixTop"></main-nav>
         <transition name="drawerSlide">
-            <home v-if="isActivePage('home')"></home>
-            <about v-if="isActivePage('about')"></about>
-            <games v-if="isActivePage('games')" @showOverlay="showOverlay"></games>
-            <projects v-if="isActivePage('projects')"></projects>
-            <contact v-if="isActivePage('contact')"></contact>
+            <home class="tab-container" v-if="isActivePage('home')"></home>
+            <about class="tab-container" v-if="isActivePage('about')"></about>
+            <games class="tab-container" v-if="isActivePage('games')" @showOverlay="showOverlay"></games>
+            <projects class="tab-container" v-if="isActivePage('projects')"></projects>
+            <contact class="tab-container" v-if="isActivePage('contact')"></contact>
         </transition>
         <overlay v-if="overlayVisible" @closeOverlay="closeOverlay"></overlay>
     </div>
@@ -70,6 +70,23 @@
 </script>
 
 <style>
+    p {
+        color: #828282;
+        font-size: 18px;
+        line-height: 30px;
+        font-weight: 300;
+    }
+
+    .tab-container {
+        padding-top: 2rem;
+    }
+
+    .section-container {
+        padding: 2rem;
+        background: #fff;
+        margin-bottom: 2rem;
+    }
+
     .page-container {
         background-color: #f4f4f4;
     }

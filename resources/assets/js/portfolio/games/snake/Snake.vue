@@ -25,7 +25,6 @@
 <style>
     .snake-container {
         text-align: center;
-        border: 1px solid red;
     }
 
     .snake-grid {

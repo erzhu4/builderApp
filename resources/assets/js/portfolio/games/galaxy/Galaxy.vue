@@ -55,7 +55,6 @@
 <style scoped>
     .galaxy-container {
         text-align: center;
-        border: 1px solid red;
     }
 
     .score-container{

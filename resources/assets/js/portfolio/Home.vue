@@ -1,5 +1,5 @@
 <template>
-    <div class="container" style="height:1500px;">
+    <div class="home-container" style="height:1500px;">
         <title-section></title-section>
     </div>
 </template>
@@ -11,9 +11,3 @@
         components: {TitleSection}
     }
 </script>
-
-<style scoped>
-    .container {
-        background: #fff;
-    }
-</style>

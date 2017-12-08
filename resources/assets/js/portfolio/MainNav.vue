@@ -61,7 +61,7 @@
     }
 
     .main-nav {
-        background: green;
+
     }
 
     .fix-nav {
@@ -98,6 +98,6 @@
         width: 100%;
         height:50px;
         margin: 0;
-        background: #282828;
+        background: #313131;
     }
 </style>

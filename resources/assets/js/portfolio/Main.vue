@@ -3,7 +3,6 @@
         <main-nav @changeNav="updateCurrentPage" :current-tab="currentPage" :fix-top="fixTop"></main-nav>
         <transition name="drawerSlide">
             <overview class="tab-container" v-if="isActivePage('overview')"></overview>
-            <about class="tab-container" v-if="isActivePage('about')"></about>
             <games class="tab-container" v-if="isActivePage('games')" @showOverlay="showOverlay"></games>
             <projects class="tab-container" v-if="isActivePage('projects')"></projects>
             <contact class="tab-container" v-if="isActivePage('contact')"></contact>
@@ -15,7 +14,6 @@
 <script>
     import MainNav from './MainNav.vue';
     import Overview from './Overview.vue';
-    import About from './About.vue';
     import Games from './Games.vue';
     import Projects from './Projects.vue';
     import Contact from './Contact.vue';
@@ -34,7 +32,7 @@
             this.addScrollHandler();
         },
 
-        components : {MainNav, Overview, About, Games, Projects, Contact, Overlay},
+        components : {MainNav, Overview, Games, Projects, Contact, Overlay},
 
         methods: {
             addScrollHandler(){
@@ -88,6 +86,7 @@
     }
 
     .page-container {
+        overflow: hidden;
         background-color: #f4f4f4;
     }
 
@@ -112,5 +111,13 @@
     .drawerSlide-enter,
     .drawerSlide-leave-to {
         max-height: 0px;
+    }
+
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity 0.25s ease-out;
+    }
+
+    .fade-enter, .fade-leave-to {
+        opacity: 0;
     }
 </style>

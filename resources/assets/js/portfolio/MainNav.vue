@@ -9,19 +9,16 @@
         <div class="row nav-bottom" :class="{ 'fix-nav': fixTop }">
             <div class="container">
                 <div class="row menu-row visible-md-block visible-lg-block">
-                    <div class="col-lg-2 nav-button" @click="changeNav('overview')">
+                    <div class="col-lg-3 nav-button" @click="changeNav('overview')">
                         <div class="nav-text" :class="{ active: currentTab == 'overview' }">Overview</div>
                     </div>
-                    <div class="col-lg-2 nav-button" @click="changeNav('about')">
-                        <div class="nav-text" :class="{ active: currentTab == 'about' }">About</div>
-                    </div>
-                    <div class="col-lg-2 nav-button" @click="changeNav('games')">
+                    <div class="col-lg-3 nav-button" @click="changeNav('games')">
                         <div class="nav-text" :class="{ active: currentTab == 'games' }">Games</div>
                     </div>
-                    <div class="col-lg-2 nav-button" @click="changeNav('projects')">
+                    <div class="col-lg-3 nav-button" @click="changeNav('projects')">
                         <div class="nav-text" :class="{ active: currentTab == 'projects' }">Projects</div>
                     </div>
-                    <div class="col-lg-2 nav-button" @click="changeNav('contact')">
+                    <div class="col-lg-3 nav-button" @click="changeNav('contact')">
                         <div class="nav-text" :class="{ active: currentTab == 'contact' }">Contact</div>
                     </div>
                 </div>

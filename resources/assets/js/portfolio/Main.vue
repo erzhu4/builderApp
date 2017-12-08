@@ -18,7 +18,7 @@
     import Projects from './Projects.vue';
     import Contact from './Contact.vue';
     import Overlay from './overlay.vue';
-    import EventBus from '../EventBus.js';
+    import EventBus from '../EventBus.vue';
 
     export default {
         data() {

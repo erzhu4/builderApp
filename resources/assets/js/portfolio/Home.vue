@@ -1,17 +1,19 @@
 <template>
-    <div class="container" style="border:blue solid 1px; height:1500px;">
-        HOME
+    <div class="container" style="height:1500px;">
+        <title-section></title-section>
     </div>
 </template>
 
 <script>
-    export default {
+    import TitleSection from './home/TitleSection.vue';
 
+    export default {
+        components: {TitleSection}
     }
 </script>
 
 <style scoped>
     .container {
-        background: red;
+        background: #fff;
     }
 </style>

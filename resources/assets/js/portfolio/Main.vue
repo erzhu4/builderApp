@@ -71,7 +71,7 @@
 
 <style>
     .page-container {
-        background-color: #dfe3e8;
+        background-color: #f4f4f4;
     }
     .drawerSlide-enter-active,
     .drawerSlide-leave-active {

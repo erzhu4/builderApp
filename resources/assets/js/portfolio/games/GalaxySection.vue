@@ -1,9 +1,11 @@
 <template>
     <div class="game-container">
-        <div class="game-start section-container" @click="showGalaxyGame" v-if="!showGalaxy">
-            <h3>Galaxy</h3>
-        </div>
-        <galaxy v-if="showGalaxy"></galaxy>
+        <transition name="drawerSlide">
+            <div class="game-start section-container" @click="showGalaxyGame" v-if="!showGalaxy">
+                <h3>Galaxy</h3>
+            </div>
+            <galaxy v-if="showGalaxy"></galaxy>
+        </transition>
     </div>
 </template>
 

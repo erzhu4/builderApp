@@ -6,8 +6,8 @@
 </template>
 
 <script>
-    import Snake from './games/SnakeSection.vue';
-    import Galaxy from './games/GalaxySection.vue';
+    import SnakeSection from './games/SnakeSection.vue';
+    import GalaxySection from './games/GalaxySection.vue';
 
     export default {
         components: {GalaxySection, SnakeSection}

@@ -10,16 +10,16 @@
             <div class="container">
                 <div class="row menu-row visible-md-block visible-lg-block">
                     <div class="col-lg-3 nav-button" @click="changeNav('overview')">
-                        <div class="nav-text" :class="{ active: currentTab == 'overview' }">Overview</div>
+                        <div class="nav-text" :class="{ active: currentTab == 'overview' }"><i class="fa fa-users" aria-hidden="true"></i> Overview</div>
                     </div>
                     <div class="col-lg-3 nav-button" @click="changeNav('games')">
-                        <div class="nav-text" :class="{ active: currentTab == 'games' }">Games</div>
+                        <div class="nav-text" :class="{ active: currentTab == 'games' }"><i class="fa fa-futbol-o" aria-hidden="true"></i> Games</div>
                     </div>
                     <div class="col-lg-3 nav-button" @click="changeNav('projects')">
-                        <div class="nav-text" :class="{ active: currentTab == 'projects' }">Projects</div>
+                        <div class="nav-text" :class="{ active: currentTab == 'projects' }"><i class="fa fa-file-image-o" aria-hidden="true"></i> Projects</div>
                     </div>
                     <div class="col-lg-3 nav-button" @click="changeNav('contact')">
-                        <div class="nav-text" :class="{ active: currentTab == 'contact' }">Contact</div>
+                        <div class="nav-text" :class="{ active: currentTab == 'contact' }"><i class="fa fa-paper-plane" aria-hidden="true"></i> Contact</div>
                     </div>
                 </div>
             </div>

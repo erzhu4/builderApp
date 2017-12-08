@@ -10,19 +10,19 @@
             <div class="container">
                 <div class="row menu-row visible-md-block visible-lg-block">
                     <div class="col-lg-2 nav-button" @click="changeNav('home')">
-                        <div style="margin:auto;">Home</div>
+                        <div class="nav-text" :class="{ active: currentTab == 'home' }">Home</div>
                     </div>
                     <div class="col-lg-2 nav-button" @click="changeNav('about')">
-                        <div style="margin:auto;">About</div>
+                        <div class="nav-text" :class="{ active: currentTab == 'about' }">About</div>
                     </div>
                     <div class="col-lg-2 nav-button" @click="changeNav('games')">
-                        <div style="margin:auto;">Games</div>
+                        <div class="nav-text" :class="{ active: currentTab == 'games' }">Games</div>
                     </div>
                     <div class="col-lg-2 nav-button" @click="changeNav('projects')">
-                        <div style="margin:auto;">Projects</div>
+                        <div class="nav-text" :class="{ active: currentTab == 'projects' }">Projects</div>
                     </div>
                     <div class="col-lg-2 nav-button" @click="changeNav('contact')">
-                        <div style="margin:auto;">Contact</div>
+                        <div class="nav-text" :class="{ active: currentTab == 'contact' }">Contact</div>
                     </div>
                 </div>
             </div>
@@ -32,7 +32,7 @@
 
 <script>
     export default {
-        props: ['fixTop'],
+        props: ['currentTab', 'fixTop'],
 
         methods: {
             changeNav(val) {
@@ -43,6 +43,10 @@
 </script>
 
 <style scoped>
+    .active {
+        color: #19b1ee;
+    }
+
     .menu-row {
         height: 100%;
     }
@@ -58,6 +62,10 @@
     .nav-button:hover {
         font-style: italic;
         cursor: pointer;
+    }
+
+    .nav-text {
+        margin: auto;
     }
 
     .main-nav {

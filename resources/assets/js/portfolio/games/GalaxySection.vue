@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div class="game-header section-container" @click="showGalaxyGame" v-if="!showGalaxy">
+    <div class="game-container">
+        <div class="game-start section-container" @click="showGalaxyGame" v-if="!showGalaxy">
             <h3>Galaxy</h3>
         </div>
         <galaxy v-if="showGalaxy"></galaxy>
@@ -26,3 +26,10 @@
         }
     }
 </script>
+
+<style scoped>
+    .game-container {
+        background: transparent;
+        text-align: center;
+    }
+</style>

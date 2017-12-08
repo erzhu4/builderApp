@@ -13,14 +13,3 @@
         components: {GalaxySection, SnakeSection}
     }
 </script>
-
-<style scoped>
-    .container {
-        background: transparent;
-        text-align: center;
-    }
-
-    .game-header:hover {
-        cursor: pointer;
-    }
-</style>

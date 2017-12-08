@@ -1,6 +1,6 @@
 <template>
     <div class="page-container" id="main-portfolio-container">
-        <main-nav @changeNav="updateCurrentPage" :fix-top="fixTop"></main-nav>
+        <main-nav @changeNav="updateCurrentPage" :current-tab="currentPage" :fix-top="fixTop"></main-nav>
         <transition name="drawerSlide">
             <home class="tab-container" v-if="isActivePage('home')"></home>
             <about class="tab-container" v-if="isActivePage('about')"></about>
@@ -90,6 +90,11 @@
     .page-container {
         background-color: #f4f4f4;
     }
+
+    .game-start:hover {
+        cursor: pointer;
+    }
+
     .drawerSlide-enter-active,
     .drawerSlide-leave-active {
         opacity: 0;

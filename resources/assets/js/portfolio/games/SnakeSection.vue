@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div class="game-header section-container" @click="showSnakeGame" v-if="!showSnake">
+    <div class="game-container">
+        <div class="game-start section-container" @click="showSnakeGame" v-if="!showSnake">
             <h3>Snake</h3>
         </div>
         <snake v-if="showSnake"></snake>
@@ -26,3 +26,10 @@
         }
     }
 </script>
+
+<style scoped>
+    .game-container {
+        background: transparent;
+        text-align: center;
+    }
+</style>

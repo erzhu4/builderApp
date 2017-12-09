@@ -89,6 +89,13 @@
         margin-bottom: 2rem;
     }
 
+    .section-title {
+        color: #5F5F5F;
+        font-weight: 700;
+        line-height: 1.1;
+        text-align: center;
+    }
+
     .page-container {
         overflow: hidden;
         background-color: #f4f4f4;
@@ -97,6 +104,8 @@
     .game-start:hover {
         cursor: pointer;
     }
+
+    /*drawerSlide*/
 
     .drawerSlide-enter-active,
     .drawerSlide-leave-active {
@@ -116,6 +125,8 @@
     .drawerSlide-leave-to {
         max-height: 0px;
     }
+
+    /*fade*/
 
     .fade-enter-active, .fade-leave-active {
         transition: opacity 0.25s ease-out;

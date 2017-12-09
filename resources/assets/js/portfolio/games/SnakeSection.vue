@@ -2,7 +2,7 @@
     <div class="game-container">
         <transition name="drawerSlide">
             <div class="game-start section-container" @click="showSnakeGame" v-if="!showSnake">
-                <h3>Snake</h3>
+                <h2 class="section-title">Snake</h2>
             </div>
             <snake v-if="showSnake"></snake>
         </transition>

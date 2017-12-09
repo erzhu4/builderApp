@@ -57,7 +57,8 @@
     }
 
     .nav-button:hover {
-        font-style: italic;
+        background: #383838;
+        text-shadow: 1px 1px #19b1ee;
         cursor: pointer;
     }
 

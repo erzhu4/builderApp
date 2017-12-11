@@ -3,7 +3,7 @@
         <p class="text-center">Relevant Web Technologies:</p>
         <div class="container clear-section-container">
             <div class="row">
-                <div class="col-md-2">
+                <div class="col-md-2 col-sm-4">
                     <skill>
                         <section slot="main">
                             <div class="image" style="background-image: url('/images/portfolio/laravel.png')"></div>
@@ -13,7 +13,7 @@
                         </section>
                     </skill>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2 col-sm-4">
                     <skill>
                         <section slot="main">
                             <div class="image" style="background-image: url('/images/portfolio/rails.png')"></div>
@@ -23,7 +23,7 @@
                         </section>
                     </skill>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2 col-sm-4">
                     <skill>
                         <section slot="main">
                             <div class="image" style="background-image: url('/images/portfolio/vue.png')"></div>
@@ -33,7 +33,7 @@
                         </section>
                     </skill>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2 col-sm-4">
                     <skill>
                         <section slot="main">
                             <div class="image" style="background-image: url('/images/portfolio/react.png')"></div>
@@ -43,7 +43,7 @@
                         </section>
                     </skill>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2 col-sm-4">
                     <skill>
                         <section slot="main">
                             <div class="image" style="background-image: url('/images/portfolio/mysql.png')"></div>
@@ -53,7 +53,7 @@
                         </section>
                     </skill>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2 col-sm-4">
                     <skill>
                         <section slot="main">
                             <div class="image" style="background-image: url('/images/portfolio/postgres.png')"></div>
@@ -65,7 +65,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-2">
+                <div class="col-md-2 col-sm-4">
                     <skill>
                         <section slot="main">
                             <div class="image" style="background-image: url('/images/portfolio/php.png')"></div>
@@ -75,7 +75,7 @@
                         </section>
                     </skill>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2 col-sm-4">
                     <skill>
                         <section slot="main">
                             <div class="image" style="background-image: url('/images/portfolio/ruby.png')"></div>
@@ -85,7 +85,7 @@
                         </section>
                     </skill>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2 col-sm-4">
                     <skill>
                         <section slot="main">
                             <div class="image" style="background-image: url('/images/portfolio/javascript.png')"></div>
@@ -95,7 +95,7 @@
                         </section>
                     </skill>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2 col-sm-4">
                     <skill>
                         <section slot="main">
                             <div class="image" style="background-image: url('/images/portfolio/css.jpg')"></div>
@@ -105,7 +105,7 @@
                         </section>
                     </skill>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2 col-sm-4">
                     <skill>
                         <section slot="main">
                             <div class="image" style="background-image: url('/images/portfolio/vagrant.png')"></div>
@@ -115,7 +115,7 @@
                         </section>
                     </skill>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2 col-sm-4">
                     <skill>
                         <section slot="main">
                             <div class="image" style="background-image: url('/images/portfolio/nginx.png')"></div>

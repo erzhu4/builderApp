@@ -24,6 +24,7 @@
 
   Enemy.prototype.collideWith = function (otherObject) {
     if (otherObject instanceof Galaxy.Ship) {
+      window.eventBus.$emit('galaxyLose');
       this.game.remove(otherObject);
     }
   };

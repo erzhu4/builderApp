@@ -17,22 +17,22 @@
 
   Galaxy.Util.inherits(BigEnemy, Galaxy.MovingObject);
 
-  	BigEnemy.prototype.move = function () {
-		this.pos = [this.pos[0] + this.vel[0], this.pos[1] + this.vel[1]];
+    BigEnemy.prototype.move = function () {
+        this.pos = [this.pos[0] + this.vel[0], this.pos[1] + this.vel[1]];
 
-		if (this.hp < 1){
-      this.game.addBigExplosion(this.pos);
-			this.game.remove(this);
-		}
-		if (this.game.isOutOfBounds(this.pos)) {
-			  this.game.remove(this);
-		  }
-	};
+        if (this.hp < 1){
+            this.game.addBigExplosion(this.pos);
+            this.game.remove(this);
+        }
+        if (this.game.isOutOfBounds(this.pos)) {
+              this.game.remove(this);
+          }
+    };
 
   BigEnemy.prototype.collideWith = function (otherObject) {
     if (otherObject instanceof Galaxy.Ship) {
-      $(".game-over").removeClass("hide");
-      this.game.remove(otherObject);
+        window.eventBus.$emit('galaxyLose');
+        this.game.remove(otherObject);
     }
   };
 

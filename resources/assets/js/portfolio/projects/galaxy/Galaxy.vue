@@ -1,5 +1,5 @@
 <template>
-    <div class="section-container relative-container">
+    <div class="section-container">
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8">
@@ -9,11 +9,13 @@
                 <div class="close-window" @click="$emit('closeWindow')"><i class="fa fa-window-close" aria-hidden="true"></i></div>
             </div>
         </div>
-        <div class="score-container">Score: <div class="galaxy-score">0</div></div>
-        <canvas style="background:black;"></canvas><br>
-        <div class="game-modal-container" v-if="!gameRunning">
-            <button class="start-button" @click="startGame">Start</button>
-            <button class="reset" @click="startGame">Reset</button>
+        <div class="relative-container game-container">
+            <div class="score-container">Score: <div class="galaxy-score">0</div></div>
+            <canvas style="background:black;"></canvas>
+            <div class="game-modal-container" v-if="!gameRunning">
+                <button class="start-button" @click="startGame">Start</button>
+                <button class="reset" @click="startGame">Reset</button>
+            </div>
         </div>
     </div>
 </template>
@@ -37,6 +39,7 @@
         data(){
             return {
                 gameRunning: false,
+                gameLost: false,
                 ctx: {},
                 game: {},
                 view: {}
@@ -65,17 +68,25 @@
 
             endGame(){
                 this.gameRunning = false;
+                this.gameLost = true;
             }
         }
     }
 </script>
 
 <style scoped>
+    .game-container {
+        width: 600px;
+        margin: auto;
+    }
+
     .game-modal-container {
         position: absolute;
         text-align: center;
         top: 50%;
-        left: 40%;
+        left: 0;
+        width: 600px;
+        background: #f5f5f5;
     }
 
     .score-container{

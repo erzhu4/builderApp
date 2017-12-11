@@ -4,7 +4,7 @@
             <div class="game-start section-container" @click="showGalaxyGame" v-if="!showGalaxy">
                 <h2 class="section-title">Galaxy</h2>
             </div>
-            <galaxy v-if="showGalaxy"></galaxy>
+            <galaxy v-if="showGalaxy" @closeWindow="hideGalaxyGame"></galaxy>
         </transition>
     </div>
 </template>

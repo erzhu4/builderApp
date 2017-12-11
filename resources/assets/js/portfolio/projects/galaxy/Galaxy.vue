@@ -1,5 +1,14 @@
 <template>
     <div class="galaxy-container">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <h2 class="section-title">Galaxy</h2>
+            </div>
+            <div class="col-md-2">
+                <div class="close-window" @click="$emit('closeWindow')"><i class="fa fa-window-close" aria-hidden="true"></i></div>
+            </div>
+        </div>
         <div class="score-container">Score: <div class="galaxy-score">0</div></div>
         <canvas></canvas><br>
         <button class="start-button" @click="startGame">Start</button>
@@ -59,5 +68,14 @@
 
     .score-container{
         text-align: left;
+    }
+
+    .close-window {
+        display: inline-block;
+        font-size: 2rem;
+    }
+
+    .close-window:hover {
+        cursor: pointer;
     }
 </style>

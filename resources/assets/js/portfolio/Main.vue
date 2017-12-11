@@ -122,7 +122,7 @@
     .drawerSlide-enter-active,
     .drawerSlide-leave-active {
         opacity: 0;
-        max-height: 2000px;
+        max-height: 4000px;
     }
     .drawerSlide-enter-active {
         transition: all 1.0s;

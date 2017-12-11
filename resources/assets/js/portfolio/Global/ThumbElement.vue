@@ -13,28 +13,34 @@
 
 <style scoped>
     .main-slot-container {
+        opacity: 1;
         width: 100%;
         height: 100%;
+        transition: opacity 0.5s;
     }
 
     .secondary-slow-container {
-        display: none;
+        position: absolute;
+        opacity: 0;
         width: 100%;
         height: 100%;
+        transition: opacity 0.5s;
     }
 
     .thumb-container:hover .main-slot-container {
-        display: none;
+        opacity: 0;
+        transition: opacity 0.5s;
     }
 
     .thumb-container:hover .secondary-slow-container{
-        display: block;
+        opacity: 1;
+        transition: opacity 0.5s;
     }
 
     .thumb-container {
-        width: 100%;
-        height: 9rem;
-        margin-bottom: 2rem;
+        width: 9rem;
+        height: 12rem;
+        margin: auto;
     }
 
     .main-slot-container section {
@@ -48,6 +54,7 @@
         -o-background-size: 100%;
         background-size: 100%;
         height: 100%;
+        background-position: center;
         background-repeat: no-repeat;
     }
 </style>

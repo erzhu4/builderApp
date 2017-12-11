@@ -3,7 +3,6 @@
         <main-nav @changeNav="updateCurrentPage" :current-tab="currentPage" :fix-top="fixTop"></main-nav>
         <transition name="drawerSlide">
             <overview class="tab-container" v-if="isActivePage('overview')"></overview>
-            <games class="tab-container" v-if="isActivePage('games')" @showOverlay="showOverlay"></games>
             <projects class="tab-container" v-if="isActivePage('projects')"></projects>
             <contact class="tab-container" v-if="isActivePage('contact')"></contact>
         </transition>
@@ -14,7 +13,6 @@
 <script>
     import MainNav from './MainNav.vue';
     import Overview from './Overview.vue';
-    import Games from './Games.vue';
     import Projects from './Projects.vue';
     import Contact from './Contact.vue';
     import Overlay from './overlay.vue';
@@ -33,7 +31,7 @@
             this.addScrollHandler();
         },
 
-        components : {MainNav, Overview, Games, Projects, Contact, Overlay},
+        components : {MainNav, Overview, Projects, Contact, Overlay},
 
         methods: {
             addScrollHandler(){

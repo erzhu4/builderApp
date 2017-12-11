@@ -1,17 +1,15 @@
 <template>
-    <div class="container" style="border:black solid 1px; height:1500px;">
-        Projects
+    <div class="container" style="height:1500px;">
+        <galaxy-section></galaxy-section>
+        <snake-section></snake-section>
     </div>
 </template>
 
 <script>
-    export default {
+    import SnakeSection from './projects/SnakeSection.vue';
+    import GalaxySection from './projects/GalaxySection.vue';
 
+    export default {
+        components: {GalaxySection, SnakeSection}
     }
 </script>
-
-<style scoped>
-    .container {
-        background: purple;
-    }
-</style>

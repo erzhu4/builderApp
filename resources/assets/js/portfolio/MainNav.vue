@@ -12,11 +12,11 @@
                     <div class="col-lg-3 nav-button" @click="changeNav('overview')">
                         <div class="nav-text" :class="{ active: currentTab == 'overview' }"><i class="fa fa-users" aria-hidden="true"></i> Overview</div>
                     </div>
-                    <div class="col-lg-3 nav-button" @click="changeNav('games')">
-                        <div class="nav-text" :class="{ active: currentTab == 'games' }"><i class="fa fa-futbol-o" aria-hidden="true"></i> Games</div>
-                    </div>
                     <div class="col-lg-3 nav-button" @click="changeNav('projects')">
-                        <div class="nav-text" :class="{ active: currentTab == 'projects' }"><i class="fa fa-file-image-o" aria-hidden="true"></i> Projects</div>
+                        <div class="nav-text" :class="{ active: currentTab == 'projects' }"><i class="fa fa-futbol-o" aria-hidden="true"></i> Projects</div>
+                    </div>
+                    <div class="col-lg-3 nav-button" @click="changeNav('resume')">
+                        <div class="nav-text" :class="{ active: currentTab == 'projects' }"><i class="fa fa-file-image-o" aria-hidden="true"></i> Resume</div>
                     </div>
                     <div class="col-lg-3 nav-button" @click="changeNav('contact')">
                         <div class="nav-text" :class="{ active: currentTab == 'contact' }"><i class="fa fa-paper-plane" aria-hidden="true"></i> Contact</div>

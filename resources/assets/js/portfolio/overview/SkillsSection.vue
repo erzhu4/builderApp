@@ -9,7 +9,7 @@
                             <div class="image" style="background-image: url('/images/portfolio/laravel.png')"></div>
                         </section>
                         <section slot="secondary">
-                            LARAVEL
+                            <div class="skill-title">Laravel</div>
                         </section>
                     </skill>
                 </div>
@@ -19,7 +19,7 @@
                             <div class="image" style="background-image: url('/images/portfolio/rails.png')"></div>
                         </section>
                         <section slot="secondary">
-                            RUBY ON RAILS
+                            <div class="skill-title" style="font-size:1.4rem;">Ruby on Rails</div>
                         </section>
                     </skill>
                 </div>
@@ -29,7 +29,7 @@
                             <div class="image" style="background-image: url('/images/portfolio/vue.png')"></div>
                         </section>
                         <section slot="secondary">
-                            VUE.js
+                            <div class="skill-title">Vue.js</div>
                         </section>
                     </skill>
                 </div>
@@ -39,7 +39,7 @@
                             <div class="image" style="background-image: url('/images/portfolio/react.png')"></div>
                         </section>
                         <section slot="secondary">
-                            REACT.js
+                            <div class="skill-title">React.js</div>
                         </section>
                     </skill>
                 </div>
@@ -49,7 +49,7 @@
                             <div class="image" style="background-image: url('/images/portfolio/mysql.png')"></div>
                         </section>
                         <section slot="secondary">
-                            MySQL
+                            <div class="skill-title">MySQL</div>
                         </section>
                     </skill>
                 </div>
@@ -59,7 +59,7 @@
                             <div class="image" style="background-image: url('/images/portfolio/postgres.png')"></div>
                         </section>
                         <section slot="secondary">
-                            PostgreSQL
+                            <div class="skill-title">PostgreSQL</div>
                         </section>
                     </skill>
                 </div>
@@ -71,7 +71,7 @@
                             <div class="image" style="background-image: url('/images/portfolio/php.png')"></div>
                         </section>
                         <section slot="secondary">
-                            PHP
+                            <div class="skill-title">PHP</div>
                         </section>
                     </skill>
                 </div>
@@ -81,7 +81,7 @@
                             <div class="image" style="background-image: url('/images/portfolio/ruby.png')"></div>
                         </section>
                         <section slot="secondary">
-                            RUBY
+                            <div class="skill-title">Ruby</div>
                         </section>
                     </skill>
                 </div>
@@ -91,7 +91,7 @@
                             <div class="image" style="background-image: url('/images/portfolio/javascript.png')"></div>
                         </section>
                         <section slot="secondary">
-                            JAVASCRIPT
+                            <div class="skill-title">JavaScript</div>
                         </section>
                     </skill>
                 </div>
@@ -101,7 +101,7 @@
                             <div class="image" style="background-image: url('/images/portfolio/css.jpg')"></div>
                         </section>
                         <section slot="secondary">
-                            CSS
+                            <div class="skill-title">CSS</div>
                         </section>
                     </skill>
                 </div>
@@ -111,7 +111,7 @@
                             <div class="image" style="background-image: url('/images/portfolio/vagrant.png')"></div>
                         </section>
                         <section slot="secondary">
-                            VAGRANT
+                            <div class="skill-title">Vagrant</div>
                         </section>
                     </skill>
                 </div>
@@ -121,7 +121,7 @@
                             <div class="image" style="background-image: url('/images/portfolio/nginx.png')"></div>
                         </section>
                         <section slot="secondary">
-                            NGINX
+                            <div class="skill-title">NGINX</div>
                         </section>
                     </skill>
                 </div>
@@ -137,3 +137,13 @@
         components: {Skill}
     }
 </script>
+
+<style scoped>
+    .skill-title {
+        font-weight: 700;
+        font-size: x-large;
+        line-height: 12rem;
+        color: #828282;
+        text-align: center;
+    }
+</style>

@@ -1,7 +1,7 @@
 <template>
     <div class="thumb-container">
         <div class="main-slot-container"><slot name="main"></slot></div>
-        <div class="secondary-slow-container"><slot name="secondary"></slot></div>
+        <div class="secondary-slot-container"><slot name="secondary"></slot></div>
     </div>
 </template>
 
@@ -14,27 +14,27 @@
 <style scoped>
     .main-slot-container {
         opacity: 1;
-        width: 100%;
-        height: 100%;
-        transition: opacity 0.5s;
+        width: 9rem;
+        height: 12rem;
+        transition: height 0.5s;
     }
 
-    .secondary-slow-container {
+    .secondary-slot-container {
         position: absolute;
-        opacity: 0;
-        width: 100%;
-        height: 100%;
-        transition: opacity 0.5s;
+        overflow: hidden;
+        width: 9rem;
+        height: 0;
+        transition: height 0.5s;
     }
 
     .thumb-container:hover .main-slot-container {
-        opacity: 0;
-        transition: opacity 0.5s;
+        height: 0;
+        transition: height 0.5s;
     }
 
-    .thumb-container:hover .secondary-slow-container{
-        opacity: 1;
-        transition: opacity 0.5s;
+    .thumb-container:hover .secondary-slot-container{
+        height: 12rem;
+        transition: height 0.5s;
     }
 
     .thumb-container {
@@ -45,7 +45,8 @@
 
     .main-slot-container section {
         width: 100%;
-        height: 100%
+        height: 100%;
+        text-align: center;
     }
 
     .main-slot-container .image {

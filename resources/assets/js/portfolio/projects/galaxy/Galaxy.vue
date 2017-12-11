@@ -13,8 +13,16 @@
             <div class="score-container">Score: <div class="galaxy-score">0</div></div>
             <canvas style="background:black;"></canvas>
             <div class="game-modal-container" v-if="!gameRunning">
-                <button class="start-button" @click="startGame">Start</button>
-                <button class="reset" @click="startGame">Reset</button>
+                <div class="row">
+                    <span v-if="gameLost">GAME OVER!!</span>
+                </div>
+                <div class="row">
+                    description
+                </div>
+                <div class="row">
+                    <button class="button col-md-6" @click="startGame">Start</button>
+                    <button class="button col-md-6" @click="startGame">Reset</button>
+                </div>
             </div>
         </div>
     </div>

@@ -89,10 +89,22 @@
         margin-bottom: 2rem;
     }
 
+    .clear-section-container {
+        padding: 2rem;
+        background: transparent;
+        margin-bottom: 2rem;
+    }
+
     .section-title {
         color: #5F5F5F;
         font-weight: 700;
         line-height: 1.1;
+        text-align: center;
+    }
+
+    .section-header {
+        margin-top: 5rem;
+        font-weight: 600;
         text-align: center;
     }
 

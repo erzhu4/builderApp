@@ -16,7 +16,7 @@
                         <div class="nav-text" :class="{ active: currentTab == 'projects' }"><i class="fa fa-futbol-o" aria-hidden="true"></i> Projects</div>
                     </div>
                     <div class="col-lg-3 nav-button" @click="changeNav('resume')">
-                        <div class="nav-text" :class="{ active: currentTab == 'projects' }"><i class="fa fa-file-image-o" aria-hidden="true"></i> Resume</div>
+                        <div class="nav-text"><i class="fa fa-file-image-o" aria-hidden="true"></i> Resume</div>
                     </div>
                     <div class="col-lg-3 nav-button" @click="changeNav('contact')">
                         <div class="nav-text" :class="{ active: currentTab == 'contact' }"><i class="fa fa-paper-plane" aria-hidden="true"></i> Contact</div>

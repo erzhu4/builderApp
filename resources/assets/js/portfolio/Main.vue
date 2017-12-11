@@ -115,6 +115,10 @@
         cursor: pointer;
     }
 
+    .relative-container {
+        position: relative;
+    }
+
     /*drawerSlide*/
 
     .drawerSlide-enter-active,

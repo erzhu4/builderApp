@@ -1,5 +1,5 @@
 <template>
-    <div class="galaxy-container">
+    <div class="section-container relative-container">
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8">
@@ -10,9 +10,11 @@
             </div>
         </div>
         <div class="score-container">Score: <div class="galaxy-score">0</div></div>
-        <canvas></canvas><br>
-        <button class="start-button" @click="startGame">Start</button>
-        <button class="reset" @click="startGame">Reset</button>
+        <canvas style="background:black;"></canvas><br>
+        <div class="game-modal-container" v-if="!gameRunning">
+            <button class="start-button" @click="startGame">Start</button>
+            <button class="reset" @click="startGame">Reset</button>
+        </div>
     </div>
 </template>
 
@@ -34,6 +36,7 @@
     export default {
         data(){
             return {
+                gameRunning: false,
                 ctx: {},
                 game: {},
                 view: {}
@@ -42,6 +45,7 @@
 
         mounted(){
             this.initialize();
+            window.eventBus.$on('galaxyLose', this.endGame);
         },
 
         methods: {
@@ -56,14 +60,22 @@
 
             startGame(){
                 this.view.start();
+                this.gameRunning = true;
+            },
+
+            endGame(){
+                this.gameRunning = false;
             }
         }
     }
 </script>
 
 <style scoped>
-    .galaxy-container {
+    .game-modal-container {
+        position: absolute;
         text-align: center;
+        top: 50%;
+        left: 40%;
     }
 
     .score-container{

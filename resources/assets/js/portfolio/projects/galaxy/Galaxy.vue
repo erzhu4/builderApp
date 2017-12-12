@@ -136,8 +136,4 @@
     .btn:hover {
         cursor: pointer;
     }
-
-    .fa {
-
-    }
 </style>

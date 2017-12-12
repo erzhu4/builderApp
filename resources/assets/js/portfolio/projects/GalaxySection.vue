@@ -1,8 +1,14 @@
 <template>
     <div class="project-container">
         <transition name="drawerSlide">
-            <div class="game-start section-container" @click="showGalaxyGame" v-if="!showGalaxy">
-                <h2 class="section-title">Galaxy</h2>
+            <div class="section-container" v-if="!showGalaxy">
+                <h2 class="section-title game-start" @click="showGalaxyGame">Galaxy</h2>
+                <button type="button" class="game-start btn btn-primary" @click="showGalaxyGame">PLAY!</button><br>
+                <div class="image game-start" @click="showGalaxyGame" style="background-image: url('/images/portfolio/galaxy.png')"></div>
+                <div class="project-description">
+                    <p>A mini JavaScript game made using canvas.</p>
+                </div>
+                <a target="_blank" href="https://github.com/erzhu4/builderApp/tree/master/resources/assets/js/portfolio/projects/galaxy">GITHUB</a>
             </div>
             <galaxy v-if="showGalaxy" @closeWindow="hideGalaxyGame"></galaxy>
         </transition>
@@ -34,6 +40,18 @@
 </script>
 
 <style scoped>
+    .image {
+        height: 25rem;
+        width: 25rem;
+        margin: auto;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .btn {
+        margin: 1rem;
+    }
+
     .project-container {
         background: transparent;
         text-align: center;

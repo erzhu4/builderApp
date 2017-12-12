@@ -1,10 +1,16 @@
 <template>
     <div class="game-container">
         <transition name="drawerSlide">
-            <div class="game-start section-container" @click="showSnakeGame" v-if="!showSnake">
-                <h2 class="section-title">Snake</h2>
+            <div class="section-container" v-if="!showSnake">
+                <h2 class="section-title game-start" @click="showSnakeGame">Snake</h2>
+                <button type="button" class="game-start btn btn-primary" @click="showSnakeGame">PLAY!</button><br>
+                <div class="image game-start" @click="showSnakeGame" style="background-image: url('/images/portfolio/snake.png')"></div>
+                <div class="project-description">
+                    <p>JavaScript game made using CSS, HTML, and jQuery.</p>
+                </div>
+                <a target="_blank" href="https://github.com/erzhu4/builderApp/tree/master/resources/assets/js/portfolio/projects/snake">GITHUB</a>
             </div>
-            <snake v-if="showSnake"></snake>
+            <snake v-if="showSnake" @closeWindow="hideSnakeGame"></snake>
         </transition>
     </div>
 </template>
@@ -24,12 +30,34 @@
         methods: {
             showSnakeGame(){
                 this.showSnake = true;
+            },
+
+            hideSnakeGame(){
+                this.showSnake = false;
             }
         }
     }
 </script>
 
 <style scoped>
+    .image {
+        height: 25rem;
+        width: 25rem;
+        margin: auto;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .btn {
+        margin: 1rem;
+    }
+
+    .game-over {
+        margin: auto;
+        font-size: 2rem;
+        color: darkred;
+    }
+
     .game-container {
         background: transparent;
         text-align: center;

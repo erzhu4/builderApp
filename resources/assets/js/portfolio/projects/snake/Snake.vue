@@ -1,9 +1,41 @@
 <template>
-    <div class="snake-container">
-        <h1>Welcome to snake!!</h1>
+    <div class="relative-container snake-container section-container">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <h2 class="section-title">Snake</h2>
+            </div>
+            <div class="col-md-2">
+                <div class="close-window" @click="$emit('closeWindow')"><i class="fa fa-window-close" aria-hidden="true"></i></div>
+            </div>
+        </div>
         <figure id="snake"></figure>
-        <button class="start-button" @click="startGame">Start</button>
-        <button class="reset" @click="startGame">Reset</button>
+        <div class="game-modal-outer-container">
+            <div class="game-modal-container" v-if="!gameRunning">
+                <div class="row">
+                    <div class="game-over" v-if="gameLost">GAME OVER!</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <i class="fa fa-caret-square-o-left" aria-hidden="true"></i>: Left
+                    </div>
+                    <div class="col-md-3">
+                        <i class="fa fa-caret-square-o-right" aria-hidden="true"></i>: Right
+                    </div>
+                    <div class="col-md-3">
+                        <i class="fa fa-caret-square-o-up" aria-hidden="true"></i>: Up
+                    </div>
+                    <div class="col-md-3">
+                        <i class="fa fa-caret-square-o-down" aria-hidden="true"></i>: Down
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <button type="button" class="btn btn-primary col-md-6" @click="startGame">Start</button>
+                    <button type="button" class="btn btn-secondary col-md-6" @click="$emit('closeWindow')">Close</button>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -13,10 +45,27 @@
     import './lib/snakeView.js';
 
     export default {
+        mounted(){
+            window.eventBus.$on('snakeLose', this.endGame);
+        },
+
+        data(){
+            return {
+                gameRunning: false,
+                gameLost: false
+            };
+        },
+
         methods: {
             startGame(){
+                this.gameRunning = true;
                 var board = new SnakeGame.Board();
                 var view = new SnakeGame.View(board, $('#snake'));
+            },
+
+            endGame(){
+                this.gameRunning = false;
+                this.gameLost = true;
             }
         }
     }
@@ -25,6 +74,21 @@
 <style>
     .snake-container {
         text-align: center;
+    }
+
+    .game-modal-outer-container {
+        position: absolute;
+        width: 100%;
+        top: 40%;
+    }
+
+    .game-modal-container {
+        text-align: center;
+        width: 600px;
+        margin: auto;
+        background: #f5f5f5;
+        padding: 1rem;
+        border: 1rem solid white;
     }
 
     .snake-grid {
@@ -41,6 +105,10 @@
         text-align: center;
     }
 
+    figure {
+        min-height: 30rem;
+    }
+
     .snake-grid > .snake-li {
         height: 18px;
         width: 18px;
@@ -54,5 +122,14 @@
 
     .snake-grid > .apple {
         background: red;
+    }
+
+    .close-window {
+        display: inline-block;
+        font-size: 2rem;
+    }
+
+    .close-window:hover {
+        cursor: pointer;
     }
 </style>

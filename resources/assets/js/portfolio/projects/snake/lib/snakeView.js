@@ -54,7 +54,7 @@ View.prototype.step = function (){
 
 View.prototype.gameOver = function (){
 	window.clearInterval(this.interval);
-	this.$game.append("<h1>Game Over!</h1>");
+	window.eventBus.$emit('snakeLose');
 };
 
 View.prototype.draw = function() {

@@ -13,7 +13,7 @@
       var ship = this.ship;
       // a
       $(document).on("keydown", function (event) {
-		  console.log("keydown");
+		  // console.log("keydown");
         // a
         event.preventDefault();
         if (event.keyCode === 37 || event.keyCode === 65){
@@ -31,7 +31,7 @@
 
     $(document).on("keyup", function (event) {
       event.preventDefault();
-	  console.log("keyup");
+	  // console.log("keyup");
       if (event.keyCode === 37 || event.keyCode === 65){
         if (ship.vel[0] < 0) {ship.slowDown();}
       }

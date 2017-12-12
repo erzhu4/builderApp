@@ -60,6 +60,7 @@
 
             updateCurrentPage(val){
                 this.currentPage = val;
+                window.scrollTo(0, 0);
             },
 
             isActivePage(page) {

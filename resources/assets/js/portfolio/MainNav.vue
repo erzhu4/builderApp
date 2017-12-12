@@ -50,7 +50,7 @@
 
     .nav-button {
         color: white;
-        min-height: 100%;
+        height:50px;
         font-weight: bold;
         display: flex;
         align-items: center;
@@ -102,7 +102,6 @@
 
     .nav-bottom {
         width: 100%;
-        height:50px;
         margin: 0;
         background: #313131;
     }

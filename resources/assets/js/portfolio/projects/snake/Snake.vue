@@ -132,4 +132,8 @@
     .close-window:hover {
         cursor: pointer;
     }
+
+    .btn:hover {
+        cursor: pointer;
+    }
 </style>

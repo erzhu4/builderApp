@@ -3,13 +3,14 @@
         <transition name="drawerSlide">
         <div v-if="showPage == 'default'">
             <p class="text-center">Fun Projects:</p>
+            <p class="text-center">Head to the <span @click="goToTab('projects')" class="anchor">PROJECTS</span> tab to see source code!</p>
             <div class="row">
                 <div class="col-md-4 col-sm-12">
                     <div class="section-container small-project-container" @click="setPage('galaxy')">
                         <h4>Galaxy Game</h4>
                         <div class="image" style="background-image: url('/images/portfolio/galaxy.png')"></div>
                         <div class="project-description">
-                            <p>A mini JavaScript game made using canvas.</p>
+                            <p class="description">A mini JavaScript game made using canvas.</p>
                         </div>
                     </div>
                 </div>
@@ -18,7 +19,7 @@
                         <h4>Snake Game</h4>
                         <div class="image" style="background-image: url('/images/portfolio/snake.png')"></div>
                         <div class="project-description">
-                            <p>JavaScript game made using CSS, HTML, and jQuery.</p>
+                            <p class="description">JavaScript game made using CSS, HTML, and jQuery.</p>
                         </div>
                     </div>
                 </div>
@@ -27,7 +28,7 @@
                         <h4>AbleTo(Work)</h4>
                         <div class="image" style="background-image: url('/images/portfolio/ableto.png')"></div>
                         <div class="project-description">
-                            <p>I work as a software developer for a health care company called AbleTo maintaining their primary care platform.</p>
+                            <p class="description">I work as a software developer for a health care company called AbleTo maintaining their primary care platform.</p>
                         </div>
                     </div>
                 </div>
@@ -61,6 +62,10 @@
                 this.showPage = val;
             },
 
+            goToTab(tab){
+                window.eventBus.$emit('navChange', tab);
+            },
+
             redirectTo(url){
                 window.open(url, '_blank');
             }
@@ -69,7 +74,15 @@
 </script>
 
 <style scoped>
-    p {
+    .anchor:hover {
+        cursor: pointer;
+    }
+
+    .anchor {
+        color:#007bff;
+    }
+
+    .description {
         font-size: 15px;
     }
 

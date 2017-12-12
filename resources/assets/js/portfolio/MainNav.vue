@@ -15,10 +15,10 @@
                     <div class="col-lg-3 nav-button" @click="changeNav('projects')">
                         <div class="nav-text" :class="{ active: currentTab == 'projects' }"><i class="fa fa-futbol-o" aria-hidden="true"></i> Projects</div>
                     </div>
-                    <div class="col-lg-3 nav-button" @click="changeNav('resume')">
+                    <div class="col-lg-3 nav-button" @click="showResume">
                         <div class="nav-text"><i class="fa fa-file-image-o" aria-hidden="true"></i> Resume</div>
                     </div>
-                    <div class="col-lg-3 nav-button" @click="changeNav('contact')">
+                    <div class="col-lg-3 nav-button" @click="contactClick">
                         <div class="nav-text" :class="{ active: currentTab == 'contact' }"><i class="fa fa-paper-plane" aria-hidden="true"></i> Contact</div>
                     </div>
                 </div>
@@ -31,9 +31,21 @@
     export default {
         props: ['currentTab', 'fixTop'],
 
+        mounted(){
+            window.eventBus.$on('navChange', this.changeNav);
+        },
+
         methods: {
             changeNav(val) {
                 this.$emit('changeNav', val);
+            },
+
+            contactClick(){
+                window.scrollTo(0,document.body.scrollHeight);
+            },
+
+            showResume(){
+                window.open('https://drive.google.com/file/d/0B47kBMuebdfJcm1PSi1PWllEaHc/view?usp=sharing', '_blank');
             }
         }
     }

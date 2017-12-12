@@ -6,7 +6,7 @@
                     <h2>Contact Me</h2>
                 </div>
                 <div class="row">
-                    <p>EMAIL: erzhu4@gmail.com</p>
+                    <p>EMAIL: <a href="mailto:erzhu4@gmail.com">erzhu4@gmail.com</a></p>
                 </div>
                 <div class="row">
                     <div class="col-md-6">

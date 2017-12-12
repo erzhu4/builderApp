@@ -10,18 +10,29 @@
             </div>
         </div>
         <div class="relative-container game-container">
-            <div class="score-container">Score: <div class="galaxy-score">0</div></div>
+            <div class="row">
+                <div class="score-container">Score: <div class="galaxy-score">0</div></div>
+            </div>
             <canvas style="background:black;"></canvas>
             <div class="game-modal-container" v-if="!gameRunning">
                 <div class="row">
-                    <span v-if="gameLost">GAME OVER!!</span>
+                    <div class="game-over" v-if="gameLost">GAME OVER!</div>
                 </div>
                 <div class="row">
-                    description
+                    <div class="col-md-3">
+                        <i class="fa fa-caret-square-o-left" aria-hidden="true"></i>: Left
+                    </div>
+                    <div class="col-md-3">
+                        <i class="fa fa-caret-square-o-right" aria-hidden="true"></i>: Right
+                    </div>
+                    <div class="col-md-6">
+                        <i class="fa fa-stop" aria-hidden="true"></i>SPACE-BAR: Shoot
+                    </div>
                 </div>
+                <br>
                 <div class="row">
-                    <button class="button col-md-6" @click="startGame">Start</button>
-                    <button class="button col-md-6" @click="startGame">Reset</button>
+                    <button type="button" class="btn btn-primary col-md-6" @click="startGame">Start</button>
+                    <button type="button" class="btn btn-secondary col-md-6" @click="$emit('closeWindow')">Close</button>
                 </div>
             </div>
         </div>
@@ -91,10 +102,18 @@
     .game-modal-container {
         position: absolute;
         text-align: center;
-        top: 50%;
+        top: 40%;
         left: 0;
         width: 600px;
         background: #f5f5f5;
+        padding: 1rem;
+        border: 1rem solid black;
+    }
+
+    .game-over {
+        margin: auto;
+        font-size: 2rem;
+        color: darkred;
     }
 
     .score-container{
@@ -108,5 +127,17 @@
 
     .close-window:hover {
         cursor: pointer;
+    }
+
+    .galaxy-score {
+        display: inline-block;
+    }
+
+    .btn:hover {
+        cursor: pointer;
+    }
+
+    .fa {
+
     }
 </style>

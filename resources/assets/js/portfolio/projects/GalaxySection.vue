@@ -1,5 +1,5 @@
 <template>
-    <div class="game-container">
+    <div class="project-container">
         <transition name="drawerSlide">
             <div class="game-start section-container" @click="showGalaxyGame" v-if="!showGalaxy">
                 <h2 class="section-title">Galaxy</h2>
@@ -34,7 +34,7 @@
 </script>
 
 <style scoped>
-    .game-container {
+    .project-container {
         background: transparent;
         text-align: center;
     }

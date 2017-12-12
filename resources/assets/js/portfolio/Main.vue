@@ -6,6 +6,7 @@
             <projects class="tab-container" v-if="isActivePage('projects')"></projects>
             <contact class="tab-container" v-if="isActivePage('contact')"></contact>
         </transition>
+        <footer-section></footer-section>
         <overlay v-if="overlayVisible" @closeOverlay="closeOverlay"></overlay>
     </div>
 </template>
@@ -15,6 +16,7 @@
     import Overview from './Overview.vue';
     import Projects from './Projects.vue';
     import Contact from './Contact.vue';
+    import FooterSection from './Footer.vue';
     import Overlay from './overlay.vue';
     import EventBus from '../EventBus.vue';
 
@@ -31,7 +33,7 @@
             this.addScrollHandler();
         },
 
-        components : {MainNav, Overview, Projects, Contact, Overlay},
+        components : {MainNav, Overview, Projects, Contact, FooterSection, Overlay},
 
         methods: {
             addScrollHandler(){

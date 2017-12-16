@@ -10,6 +10,6 @@
     <div id="portfolio-react">
         <div id="react-target"></div>
     </div>
-    <script src="/js/portfolio/portfolio-react.js"></script>
+    <script src="/js/portfolio-react/portfolio-react.js"></script>
     </body>
 </html>

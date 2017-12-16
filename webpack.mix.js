@@ -1,3 +1,5 @@
+const mix = require('laravel-mix');
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -8,3 +10,5 @@
  | file for the application as well as bundling up all the JS files.
  |
  */
+
+mix.react('resources/assets/jsx/portfolio-react.jsx', 'public/js/portfolio-react');

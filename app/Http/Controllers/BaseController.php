@@ -11,6 +11,12 @@ class BaseController extends Controller
         return view('portfolio');
     }
 
+    public function portfolioReact()
+    {
+        return view('portfolio-react');
+    }
+
+
     public function test()
     {
         return view('test');

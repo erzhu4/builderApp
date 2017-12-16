@@ -13,5 +13,8 @@ elixir(function(mix) {
     mix.webpack('resources/assets/js/bootstrap.js', 'public/js');
 
     //compile portfolio
-    mix.webpack('resources/assets/js/portfolio.js', 'public/js/portfolio');
+    // mix.webpack('resources/assets/js/portfolio.js', 'public/js/portfolio');
+
+    //compile portfolio
+    mix.rollup('resources/assets/js/portfolio-react.jsx', 'public/js/portfolio');
 });

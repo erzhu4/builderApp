@@ -16,3 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('/portfolio', 'BaseController@portfolio');
+
+Route::get('/portfolio-react', 'BaseController@portfolioReact');

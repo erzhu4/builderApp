@@ -5,12 +5,21 @@ module.exports = {
 
     entry: [
         './resources/assets/js/my-react.js',
-        './resources/assets/js/test.js'
+        './resources/assets/jsx/portfolio-react.jsx'
     ],
 
     output: {
-        filename: 'testbundle.js',
-        path: path.join(__dirname, '../public/js')
+        filename: 'portfolio-react.js',
+        path: path.join(__dirname, '../public/js/portfolio-react')
+    },
+
+    module : {
+        loaders : [
+            {
+                test : /\.jsx?/,
+                loader : 'babel-loader'
+            }
+        ]
     }
 
 };

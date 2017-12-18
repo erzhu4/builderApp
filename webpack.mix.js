@@ -11,4 +11,13 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.react('resources/assets/jsx/portfolio-react.jsx', 'public/js/portfolio-react');
+mix.copy('resources/images', 'public/images');
+
+mix.copy('resources/assets/css/bootstrap.css', 'public/css');
+
+mix.copy('resources/assets/css/font-awesome', 'public/css/font-awesome');
+
+mix.js('resources/assets/js/bootstrap.js', 'public/js');
+
+mix.js('resources/assets/js/portfolio.js', 'public/js/portfolio');
+// mix.react('resources/assets/jsx/portfolio-react.jsx', 'public/js/portfolio-react');

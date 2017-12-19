@@ -4,7 +4,6 @@ var path = require('path');
 module.exports = {
 
     entry: [
-        './resources/assets/js/my-react.js',
         './resources/assets/jsx/portfolio-react.jsx'
     ],
 

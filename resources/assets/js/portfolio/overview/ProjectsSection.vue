@@ -8,7 +8,7 @@
                 <div class="col-md-4 col-sm-12">
                     <div class="section-container small-project-container" @click="setPage('galaxy')">
                         <h4>Galaxy Game</h4>
-                        <div class="image" style="background-image: url('/images/portfolio/galaxy.png')"></div>
+                        <div class="image" style="background-image: url('images/portfolio/galaxy.png')"></div>
                         <div class="project-description">
                             <p class="description">A mini JavaScript game made using canvas.</p>
                         </div>
@@ -17,7 +17,7 @@
                 <div class="col-md-4 col-sm-12">
                     <div class="section-container small-project-container" @click="setPage('snake')">
                         <h4>Snake Game</h4>
-                        <div class="image" style="background-image: url('/images/portfolio/snake.png')"></div>
+                        <div class="image" style="background-image: url('images/portfolio/snake.png')"></div>
                         <div class="project-description">
                             <p class="description">JavaScript game made using CSS, HTML, and jQuery.</p>
                         </div>
@@ -26,7 +26,7 @@
                 <div class="col-md-4 col-sm-12">
                     <div class="section-container small-project-container" @click="redirectTo('https://www.ableto.com/')">
                         <h4>AbleTo(Work)</h4>
-                        <div class="image" style="background-image: url('/images/portfolio/ableto.png')"></div>
+                        <div class="image" style="background-image: url('images/portfolio/ableto.png')"></div>
                         <div class="project-description">
                             <p class="description">I work as a software developer for a health care company called AbleTo maintaining their primary care platform.</p>
                         </div>

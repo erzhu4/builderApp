@@ -5,7 +5,7 @@
 
   var Ship = Galaxy.Ship = function (options) {
     var sprite = new Image();
-    sprite.src = "./images/portfolio/ship.gif";
+    sprite.src = "images/portfolio/ship.gif";
     options.radius = Ship.RADIUS;
     options.vel = options.vel || [0, 0];
     options.color = "#999999";

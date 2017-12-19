@@ -4,7 +4,7 @@
             <div class="section-container" v-if="!showGalaxy">
                 <h2 class="section-title game-start" @click="showGalaxyGame">Galaxy</h2>
                 <button type="button" class="game-start btn btn-primary" @click="showGalaxyGame">PLAY!</button><br>
-                <div class="image game-start" @click="showGalaxyGame" style="background-image: url('/images/portfolio/galaxy.png')"></div>
+                <div class="image game-start" @click="showGalaxyGame" style="background-image: url('images/portfolio/galaxy.png')"></div>
                 <div class="project-description">
                     <p>A mini JavaScript game made using canvas.</p>
                 </div>

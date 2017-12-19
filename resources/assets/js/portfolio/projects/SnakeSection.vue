@@ -4,7 +4,7 @@
             <div class="section-container" v-if="!showSnake">
                 <h2 class="section-title game-start" @click="showSnakeGame">Snake</h2>
                 <button type="button" class="game-start btn btn-primary" @click="showSnakeGame">PLAY!</button><br>
-                <div class="image game-start" @click="showSnakeGame" style="background-image: url('/images/portfolio/snake.png')"></div>
+                <div class="image game-start" @click="showSnakeGame" style="background-image: url('images/portfolio/snake.png')"></div>
                 <div class="project-description">
                     <p>JavaScript game made using CSS, HTML, and jQuery.</p>
                 </div>

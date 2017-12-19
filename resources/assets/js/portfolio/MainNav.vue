@@ -1,8 +1,8 @@
 <template>
     <div class="main-nav">
-        <div class="row nav-top">
+        <div class="row nav-top" style="background-image:url('images/portfolio/mainnav.jpg');">
             <div class="container">
-                <div class="text-center"><img class="picture" src="/images/portfolio/eric-zhu.jpg"></div>
+                <div class="text-center"><img class="picture" src="images/portfolio/eric-zhu.jpg"></div>
                 <div class="name-div">ERIC ZHU</div>
             </div>
         </div>
@@ -89,7 +89,6 @@
     }
 
     .nav-top {
-        background-image: url("/images/portfolio/mainnav.jpg");
         background-size: 100%;
         background-position: center;
         min-height: 100%;

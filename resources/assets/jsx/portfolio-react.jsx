@@ -1,4 +1,15 @@
-window.React = require('react');
-window.ReactDom = require('react-dom');
+import React from 'react';
+import ReactDom from 'react-dom';
 
-ReactDom.render(<h1>Big Header</h1>, document.getElementById('react-target'));
+import MainNav from './portfolio/MainNav.jsx';
+
+class Main extends React.Component{
+    render(){
+        return (<div>
+            <MainNav />
+            <div>This is some content</div>
+        </div>);
+    }
+}
+
+ReactDom.render(<Main />, document.getElementById('react-target'));

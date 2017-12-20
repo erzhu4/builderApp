@@ -1,7 +1,7 @@
 var webpack = require('webpack');
 var path = require('path');
 
-module.exports = {
+var reactModule = {
 
     entry: [
         './resources/assets/jsx/portfolio-react.jsx'
@@ -22,3 +22,5 @@ module.exports = {
     }
 
 };
+
+module.exports = [reactModule];

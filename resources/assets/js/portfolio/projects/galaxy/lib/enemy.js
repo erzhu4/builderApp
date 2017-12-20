@@ -1,33 +1,29 @@
-(function () {
-  if (typeof Galaxy === "undefined") {
-    window.Galaxy = {};
-  }
+import MovingObject from './movingObject.js';
+import Ship from './ship.js';
 
-  var Enemy = Galaxy.Enemy = function (options) {
-	   this.game = options.game;
+class Enemy extends MovingObject{
+
+  constructor(options) {
     var sprite = new Image();
     sprite.src = ["images/portfolio/enemy.gif", "images/portfolio/enemy2.png"][Math.floor(Math.random() * 2)];
-    options.color = Enemy.COLOR;
-    options.pos = options.pos || [Math.random() * Galaxy.Game.DIM_X, 1];
-    options.radius = Enemy.RADIUS;
+    options.color = "#009999";
+    options.pos = options.pos || [Math.random() * options.x_dem, 1];
+    options.radius = 30;
     options.vel = options.vel || [0, (Math.random() * 4) + 1];
     options.dem = 60;
     options.sprite = sprite;
-    Galaxy.MovingObject.call(this, options);
-  };
+    super(options);
+    this.isWrappable = false;
+  }
 
-  Enemy.COLOR = "#009999";
-  Enemy.RADIUS = 30;
-  Enemy.SPEED = 4;
 
-  Galaxy.Util.inherits(Enemy, Galaxy.MovingObject);
-
-  Enemy.prototype.collideWith = function (otherObject) {
-    if (otherObject instanceof Galaxy.Ship) {
+  collideWith(otherObject) {
+    if (otherObject instanceof Ship) {
       window.eventBus.$emit('galaxyLose');
       this.game.remove(otherObject);
     }
-  };
+  }
+  
+}
 
-  Enemy.prototype.isWrappable = false;
-})();
+export default Enemy;

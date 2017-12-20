@@ -1,21 +1,21 @@
-(function () {
-  if (typeof Galaxy === "undefined") {
-    window.Galaxy = {};
-  }
+import ExpandingObject from './expandingObject.js';
 
+class Puff extends ExpandingObject {
 
-	var Puff = Galaxy.Puff = function (pos, game) {
-		this.game = game;
-		this.pos = pos;
-		this.sprite = new Image();
-		this.sprite.src = "./images/portfolio/puff.png";
-		this.dem = 10;
-    Galaxy.ExpandingObject.call(this);
-	};
+	constructor(pos, game) {
+		var options = {};
+		options.pos = pos;
+		options.game = game;
 
-  Galaxy.Util.inherits(Puff, Galaxy.ExpandingObject);
+		var sprite = new Image();
+		sprite.src = "images/portfolio/puff.png";
 
-	Puff.prototype.move = function () {
+		options.sprite = sprite;
+		options.dem = 10;
+    	super(options);
+	}
+
+	move() {
 		if (this.dem > 60) {
 			this.game.remove(this);
 		} else {
@@ -23,7 +23,9 @@
 			this.pos[0] -= 10;
 			this.pos[1] -= 10;
 		}
-	};
+	}
 
 
- })();
+ }
+
+ export default Puff;

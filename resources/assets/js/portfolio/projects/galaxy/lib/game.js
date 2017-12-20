@@ -1,9 +1,15 @@
-(function() {
-  if (typeof Galaxy === "undefined") {
-    window.Galaxy = {};
-  }
+import Enemy from './enemy.js';
+import BigEnemy from './bigenemy.js';
+import Bullet from './bullet.js';
+import Ship from './ship.js';
+import Explosion from './explosion.js';
+import BigExplosion from './bigexplosion.js';
+import Spark from './spark.js';
+import Puff from './puff.js';
 
-  var Game = Galaxy.Game = function() {
+class GalaxyGame {
+
+  constructor(color, x, y, fps) {
     this.Galaxy = [];
     this.bullets = [];
     this.ships = [];
@@ -13,84 +19,84 @@
     this.puffs = [];
   	this.bigEnemies = [];
     this.numEnemies = 10;
-    this.addEnemies();
     this.space = new Image();
-    this.space.src = "./images/portfolio/stars.jpg"
-  };
+    this.space.src = "images/portfolio/stars.jpg"
 
-  Game.BG_COLOR = "#000000";
-  Game.DIM_X = 600;
-  Game.DIM_Y = 600;
-  Game.FPS = 32;
+    this.BG_COLOR = color;
+    this.DIM_X = x;
+    this.DIM_Y = y;
+    this.FPS = fps;
+  }
 
-  Game.prototype.add = function(object) {
-    if (object instanceof Galaxy.Enemy) {
+
+  add(object) {
+    if (object instanceof Enemy) {
       this.Galaxy.push(object);
-    } else if (object instanceof Galaxy.Bullet) {
+    } else if (object instanceof Bullet) {
       this.bullets.push(object);
-    } else if (object instanceof Galaxy.Ship) {
+    } else if (object instanceof Ship) {
       this.ships.push(object);
     } else {
       throw "um";
     }
-  };
+  }
 
-  Game.prototype.addEnemies = function() {
+  addEnemies() {
     for (var i = 0; i < this.numEnemies; i++) {
-      this.add(new Galaxy.Enemy({ game: this }));
+      this.add(new Enemy({ game: this, x_dem: this.DIM_X }));
     }
-  };
+  }
 
-  Game.prototype.addBigEnemy = function() {
+  addBigEnemy() {
     if (this.bigEnemies.length > 3){
       this.bigEnemies.shift(1);
     }
-	  this.bigEnemies.push(new Galaxy.BigEnemy( {game: this} ));
-  };
+	  this.bigEnemies.push(new BigEnemy( {game: this, x_dem: this.DIM_X} ));
+  }
 
-  Game.prototype.addShip = function() {
-    var ship = new Galaxy.Ship({
-      pos: [Galaxy.Game.DIM_X/2, -550],
+  addShip() {
+    var ship = new Ship({
+      pos: [this.DIM_X/2, -550],
       game: this
     });
 
     this.ships.push(ship);
     return ship;
-  };
+  }
 
-  Game.prototype.addExplosion = function(pos) {
+  addExplosion(pos) {
   	if (this.explosions.length > 10){
   		this.explosions.shift(1);
   	}
-  	this.explosions.push(new Galaxy.Explosion(pos, this))
-  };
+  	this.explosions.push(new Explosion(pos, this))
+  }
 
-  Game.prototype.addBigExplosion = function(pos) {
+  addBigExplosion(pos) {
     if (this.bigExplosions.length > 2){
       this.bigExplosions.shift(1);
     }
-    this.bigExplosions.push(new Galaxy.BigExplosion(pos, this))
-  };
+    this.bigExplosions.push(new BigExplosion(pos, this))
+  }
 
-  Game.prototype.addSpark = function(pos) {
+  addSpark(pos) {
     if (this.sparks.length > 8){
       this.sparks.shift(1);
     }
-    this.sparks.push(new Galaxy.Spark(pos, this));
-  };
+    this.sparks.push(new Spark(pos, this));
+  }
 
-  Game.prototype.addPuff = function(pos) {
+  addPuff(pos) {
     if (this.puffs.length > 8){
       this.puffs.shift(1);
     }
-    this.puffs.push(new Galaxy.Puff(pos, this));
-  };
+    this.puffs.push(new Puff(pos, this));
+  }
 
-  Game.prototype.allObjects = function () {
+  allObjects() {
     return [].concat(this.ships, this.Galaxy, this.bullets, this.explosions, this.bigEnemies, this.sparks, this.bigExplosions, this.puffs);
-  };
+  }
 
-  Game.prototype.checkCollisions = function() {
+  checkCollisions() {
     var game = this;
 
     this.allObjects().forEach(function (obj1) {
@@ -103,26 +109,26 @@
         }
       });
     });
-  };
+  }
 
-  Game.prototype.draw = function(ctx) {
-    ctx.clearRect(0, 0, Game.DIM_X, Game.DIM_Y);
-    ctx.fillStyle = Game.BG_COLOR;
-    ctx.fillRect(0, 0, Game.DIM_X, Game.DIM_Y);
-    ctx.drawImage(this.space, 0, 0, Game.DIM_X, Game.DIM_Y)
+  draw(ctx) {
+    ctx.clearRect(0, 0, this.DIM_X, this.DIM_Y);
+    ctx.fillStyle = this.BG_COLOR;
+    ctx.fillRect(0, 0, this.DIM_X, this.DIM_Y);
+    ctx.drawImage(this.space, 0, 0, this.DIM_X, this.DIM_Y)
     this.allObjects().forEach(function (object) {
       object.draw(ctx);
     });
-  };
+  }
 
-  Game.prototype.isOutOfBounds = function(pos) {
+  isOutOfBounds(pos) {
     return (pos[0] < 0) || (pos[1] < 0) ||
-      (pos[0] > Game.DIM_X) || (pos[1] > Game.DIM_Y);
-  };
+      (pos[0] > this.DIM_X) || (pos[1] > this.DIM_Y);
+  }
 
-  Game.prototype.moveObjects = function() {
+  moveObjects() {
     if(this.ships[0]){
-      if (this.ships[0].pos[0] > Galaxy.Game.DIM_X - 20) {
+      if (this.ships[0].pos[0] > this.DIM_X - 20) {
         this.ships[0].vel = [0,0];
         this.ships[0].pos[0] -= 1;
       }
@@ -134,41 +140,41 @@
         object.move();
       });
     }
-  };
+  }
 
 
 
-  Game.prototype.remove = function(object) {
-    if (object instanceof Galaxy.Bullet) {
+  remove(object) {
+    if (object instanceof Bullet) {
       this.bullets.splice(this.bullets.indexOf(object), 1);
-    } else if (object instanceof Galaxy.Enemy) {
+    } else if (object instanceof Enemy) {
       var idx = this.Galaxy.indexOf(object);
-      this.Galaxy[idx] = new Galaxy.Enemy({ game: this });
-    } else if (object instanceof Galaxy.Ship) {
+      this.Galaxy[idx] = new Enemy({ game: this, x_dem: this.DIM_X });
+    } else if (object instanceof Ship) {
       this.ships.splice(this.ships.indexOf(object), 1);
-    } else if (object instanceof Galaxy.BigEnemy) {
+    } else if (object instanceof BigEnemy) {
       this.bigEnemies.splice(this.bigEnemies.indexOf(object), 1);
-    } else if (object instanceof Galaxy.Explosion) {
+    } else if (object instanceof Explosion) {
       this.explosions.splice(this.explosions.indexOf(object), 1);
-    } else if (object instanceof Galaxy.BigExplosion) {
+    } else if (object instanceof BigExplosion) {
       this.bigExplosions.splice(this.bigExplosions.indexOf(object), 1);
-    } else if (object instanceof Galaxy.Spark) {
+    } else if (object instanceof Spark) {
       this.sparks.splice(this.sparks.indexOf(object), 1);
-    } else if (object instanceof Galaxy.Puff) {
+    } else if (object instanceof Puff) {
       this.puffs.splice(this.puffs.indexOf(object), 1);
     } else {
       throw "um";
     }
-  };
+  }
 
-  Game.prototype.step = function() {
+  step() {
     this.moveObjects();
     this.checkCollisions();
-  };
+  }
 
-  Game.prototype.wrap = function(pos) {
+  wrap(pos) {
     return [
-      wrap(pos[0], Game.DIM_X), wrap(pos[1], Game.DIM_Y)
+      wrap(pos[0], this.DIM_X), wrap(pos[1], this.DIM_Y)
     ];
 
     function wrap(coord, max) {
@@ -180,5 +186,7 @@
         return coord;
       }
     }
-  };
-})();
+  }
+}
+
+export default GalaxyGame;

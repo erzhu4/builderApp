@@ -1,39 +1,40 @@
-(function () {
-  if (typeof Galaxy === "undefined") {
-    window.Galaxy = {};
-  }
+import MovingObject from './movingObject.js';
+import Ship from './ship.js';
 
-  var BigEnemy = Galaxy.BigEnemy = function (options) {
-  	this.hp = 20;
+class BigEnemy extends MovingObject{
+
+  constructor(options) {
     var sprite = new Image();
     sprite.src = "images/portfolio/battlecruiser.png";
-    options.pos = [50 + Math.random() * 0.75 * Galaxy.Game.DIM_X, 1];
+    options.pos = [50 + Math.random() * 0.75 * options.x_dem, 1];
     options.radius = 100;
     options.vel = [0, 2];
     options.dem = 250;
     options.sprite = sprite;
-    Galaxy.MovingObject.call(this, options);
-  };
+    super(options);
+    this.hp = 20;
+  }
 
-  Galaxy.Util.inherits(BigEnemy, Galaxy.MovingObject);
 
-    BigEnemy.prototype.move = function () {
-        this.pos = [this.pos[0] + this.vel[0], this.pos[1] + this.vel[1]];
+  move() {
+    this.pos = [this.pos[0] + this.vel[0], this.pos[1] + this.vel[1]];
 
-        if (this.hp < 1){
-            this.game.addBigExplosion(this.pos);
-            this.game.remove(this);
-        }
-        if (this.game.isOutOfBounds(this.pos)) {
-              this.game.remove(this);
-          }
-    };
-
-  BigEnemy.prototype.collideWith = function (otherObject) {
-    if (otherObject instanceof Galaxy.Ship) {
-        window.eventBus.$emit('galaxyLose');
-        this.game.remove(otherObject);
+    if (this.hp < 1){
+      this.game.addBigExplosion(this.pos);
+      this.game.remove(this);
     }
-  };
+    if (this.game.isOutOfBounds(this.pos)) {
+      this.game.remove(this);
+    }
+  }
 
- })();
+  collideWith(otherObject) {
+    if (otherObject instanceof Ship) {
+      window.eventBus.$emit('galaxyLose');
+      this.game.remove(otherObject);
+    }
+  }
+
+ }
+
+ export default BigEnemy;

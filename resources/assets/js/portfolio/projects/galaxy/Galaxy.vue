@@ -40,19 +40,7 @@
 </template>
 
 <script>
-    import './lib/util.js';
-    import './lib/movingObject.js';
-    import './lib/expandingObject.js';
-    import './lib/enemy.js';
-    import './lib/ship.js';
-    import './lib/bullet.js';
-    import './lib/explosion.js';
-    import './lib/bigExplosion.js';
-    import './lib/bigenemy.js';
-    import './lib/spark.js';
-    import './lib/puff.js';
-    import './lib/game.js';
-    import './lib/gameView.js';
+    import GalaxyGame from './lib/galaxy.js';
 
     export default {
         data(){
@@ -73,15 +61,14 @@
         methods: {
             initialize(){
                 var canvasEl = document.getElementsByTagName("canvas")[0];
-                canvasEl.width = Galaxy.Game.DIM_X;
-                canvasEl.height = Galaxy.Game.DIM_Y;
                 this.ctx = canvasEl.getContext("2d");
-                this.game = new Galaxy.Game();
-                this.view = new Galaxy.GameView(this.game, this.ctx);
+                this.game = new GalaxyGame(this.ctx);
+                canvasEl.width = this.game.DIM_X;
+                canvasEl.height = this.game.DIM_Y;
             },
 
             startGame(){
-                this.view.start();
+                this.game.startGame();
                 this.gameRunning = true;
             },
 

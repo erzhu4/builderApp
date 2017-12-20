@@ -1,26 +1,22 @@
-(function () {
-  if (typeof Galaxy === "undefined") {
-    window.Galaxy = {};
-  }
+import Enemy from './enemy.js';
+import BigEnemy from './bigenemy.js';
+import MovingObject from './movingObject.js';
 
-  var Bullet = Galaxy.Bullet = function (options) {
-	  this.game = options.game;
+class Bullet extends MovingObject {
+
+  constructor(options) {
     var sprite = new Image();
     sprite.src = "images/portfolio/bullet.png";
-    options.radius = Bullet.RADIUS;
+    options.radius = 2;
     options.sprite = sprite;
     options.dem = 45;
-    Galaxy.MovingObject.call(this, options);
-  };
+    super(options);
+    this.isWrappable = false;
+  }
 
-  Bullet.RADIUS = 2;
-
-
-  Galaxy.Util.inherits(Bullet, Galaxy.MovingObject);
-
-  Bullet.prototype.collideWith = function (otherObject) {
+  collideWith(otherObject) {
     this.game.addSpark(this.pos);
-    if (otherObject instanceof Galaxy.Enemy) {
+    if (otherObject instanceof Enemy) {
 	    this.game.addExplosion(this.pos);
       this.remove();
       otherObject.remove();
@@ -31,15 +27,16 @@
       }
     }
 
-  	if (otherObject instanceof Galaxy.BigEnemy){
+  	if (otherObject instanceof BigEnemy){
   		otherObject.hp -= 1;
   		this.remove();
   	}
-  };
+  }
 
-  Bullet.prototype.draw = function (ctx) {
+  draw(ctx) {
     ctx.drawImage(this.sprite, this.pos[0] - this.dem / 8, this.pos[1] - this.dem, this.dem / 4, this.dem);
-  };
+  }
 
-  Bullet.prototype.isWrappable = false;
-})();
+}
+
+export default Bullet;

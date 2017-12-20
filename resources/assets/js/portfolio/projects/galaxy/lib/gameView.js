@@ -1,63 +1,72 @@
-(function () {
-  if (typeof Galaxy === "undefined") {
-    window.Galaxy = {};
-  }
+import GalaxyGame from './game.js';
 
-  var GameView = Galaxy.GameView = function (game, ctx) {
+class GalaxyView {
+
+  constructor(ctx, color, x, y, fps) {
+    this.BG_COLOR = color;
+    this.DIM_X = x;
+    this.DIM_Y = y;
+    this.FPS = fps;
+
     this.ctx = ctx;
     this.timerId = null;
-  };
+  }
 
-
-  GameView.prototype.bindKeyHandlers = function () {
-      var ship = this.ship;
+  bindKeyHandlers() {
+    var ship = this.ship;
+    // a
+    $(document).on("keydown", function(event){
       // a
-      $(document).on("keydown", function (event) {
-		  // console.log("keydown");
-        // a
-        event.preventDefault();
-        if (event.keyCode === 37 || event.keyCode === 65){
-          ship.power([-1, 0]);
-        }
-        //d
-        if (event.keyCode === 39 || event.keyCode === 68){
-          ship.power([1, 0]);
-        }
-
-        if (event.keyCode === 32 || event.keyCode === 80){
-          ship.fireBullet();
-        }
-      });
-
-    $(document).on("keyup", function (event) {
       event.preventDefault();
-	  // console.log("keyup");
       if (event.keyCode === 37 || event.keyCode === 65){
-        if (ship.vel[0] < 0) {ship.slowDown();}
+        ship.power([-1, 0]);
       }
-	  if (event.keyCode === 39 || event.keyCode === 68 ){
-        if (ship.vel[0] > 0) {ship.slowDown();}
+      //d
+      if (event.keyCode === 39 || event.keyCode === 68){
+        ship.power([1, 0]);
+      }
+
+      if (event.keyCode === 32 || event.keyCode === 80){
+        ship.fireBullet();
       }
     });
-  };
 
-  GameView.prototype.start = function () {
+    $(document).on("keyup", function(event){
+      event.preventDefault();
+      if (event.keyCode === 37 || event.keyCode === 65){
+        if (ship.vel[0] < 0) {
+          ship.slowDown();
+        }
+      }
+      if (event.keyCode === 39 || event.keyCode === 68 ){
+        if (ship.vel[0] > 0) {
+          ship.slowDown();
+        }
+      }
+    });
+  }
+
+  start(){
 	 $(".galaxy-score").html(0);
-    this.game = new Galaxy.Game();
+    this.game = new GalaxyGame(this.BG_COLOR, this.DIM_X, this.DIM_Y, this.FPS);
     this.ship = this.game.addShip();
+    this.game.addEnemies();
     var gameView = this;
     this.stop();
     this.timerId = setInterval(
-      function () {
+      function(){
         gameView.game.step();
         gameView.game.draw(gameView.ctx);
-      }, 1000 / Galaxy.Game.FPS
+      }, 1000 / this.game.FPS
     );
 
     this.bindKeyHandlers();
-  };
+  }
 
-  GameView.prototype.stop = function () {
+  stop(){
     clearInterval(this.timerId);
-  };
-})();
+  }
+
+}
+
+export default GalaxyView;

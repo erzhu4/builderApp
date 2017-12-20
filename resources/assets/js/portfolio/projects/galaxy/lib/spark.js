@@ -1,21 +1,22 @@
-(function () {
-  if (typeof Galaxy === "undefined") {
-    window.Galaxy = {};
-  }
+import ExpandingObject from './expandingObject.js';
 
+class Spark extends ExpandingObject{
 
-	var Spark = Galaxy.Spark = function (pos, game) {
-		this.game = game;
-		this.pos = pos;
-		this.sprite = new Image();
-		this.sprite.src = "./images/portfolio/spark.png";
-		this.dem = 10;
-    Galaxy.ExpandingObject.call(this);
-	};
+	constructor(pos, game) {
+		var options = {};
+		options.pos = pos;
+		options.game = game;
 
-    Galaxy.Util.inherits(Spark, Galaxy.ExpandingObject);
+		var sprite = new Image();
+		sprite.src = "images/portfolio/spark.png";
 
-	Spark.prototype.move = function () {
+		options.sprite = sprite;
+
+		options.dem = 10;
+    	super(options);
+	}
+
+	move() {
 		if (this.dem > 60) {
 			this.game.remove(this);
 		} else {
@@ -23,7 +24,8 @@
 			this.pos[0] -= 5;
 			this.pos[1] -= 5;
 		}
-	};
+	}
 
+ }
 
- })();
+export default Spark;

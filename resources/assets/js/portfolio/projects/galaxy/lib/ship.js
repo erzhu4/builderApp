@@ -5,7 +5,7 @@ class Ship extends MovingObject{
 
   constructor(options) {
     var sprite = new Image();
-    sprite.src = "images/portfolio/ship.gif";
+    sprite.src = window.BasePath + "images/ship.gif";
     options.radius = 30;
     options.vel = options.vel || [0, 0];
     options.color = "#999999";

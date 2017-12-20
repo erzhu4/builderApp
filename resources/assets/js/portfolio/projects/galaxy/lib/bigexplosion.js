@@ -8,7 +8,7 @@ class BigExplosion extends ExpandingObject{
 		options.game = game;
 
 		var sprite = new Image();
-		sprite.src = "images/portfolio/bigexplosion.gif";
+		sprite.src = window.BasePath + "images/bigexplosion.gif";
 
 		options.sprite = sprite;
 		options.dem = 80;

@@ -8,7 +8,7 @@ class Puff extends ExpandingObject {
 		options.game = game;
 
 		var sprite = new Image();
-		sprite.src = "images/portfolio/puff.png";
+		sprite.src = window.BasePath + "images/puff.png";
 
 		options.sprite = sprite;
 		options.dem = 10;

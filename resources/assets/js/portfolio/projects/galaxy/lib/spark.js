@@ -8,7 +8,7 @@ class Spark extends ExpandingObject{
 		options.game = game;
 
 		var sprite = new Image();
-		sprite.src = "images/portfolio/spark.png";
+		sprite.src = window.BasePath + "images/spark.png";
 
 		options.sprite = sprite;
 

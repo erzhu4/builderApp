@@ -6,7 +6,7 @@ class Bullet extends MovingObject {
 
   constructor(options) {
     var sprite = new Image();
-    sprite.src = "images/portfolio/bullet.png";
+    sprite.src = window.BasePath + "images/bullet.png";
     options.radius = 2;
     options.sprite = sprite;
     options.dem = 45;

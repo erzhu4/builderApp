@@ -1,8 +1,8 @@
 <template>
     <div class="main-nav">
-        <div class="row nav-top" style="background-image:url('images/portfolio/mainnav.jpg');">
+        <div class="row nav-top" :style="{ 'background-image': 'url(' + adjustPath('images/mainnav.jpg') + ')' }">
             <div class="container">
-                <div class="text-center"><img class="picture" src="images/portfolio/eric-zhu.jpg"></div>
+                <div class="text-center"><img class="picture" :src="adjustPath('images/eric-zhu.jpg')"></div>
                 <div class="name-div">ERIC ZHU</div>
             </div>
         </div>
@@ -28,8 +28,12 @@
 </template>
 
 <script>
+    import AdjustPath from './Global/AdjustPathMixin.vue';
+
     export default {
         props: ['currentTab', 'fixTop'],
+
+        mixins: [AdjustPath],
 
         mounted(){
             window.eventBus.$on('navChange', this.changeNav);
@@ -76,10 +80,6 @@
 
     .nav-text {
         margin: auto;
-    }
-
-    .main-nav {
-
     }
 
     .fix-nav {

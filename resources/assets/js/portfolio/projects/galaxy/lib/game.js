@@ -20,7 +20,7 @@ class GalaxyGame {
   	this.bigEnemies = [];
     this.numEnemies = 10;
     this.space = new Image();
-    this.space.src = "images/portfolio/stars.jpg"
+    this.space.src = window.BasePath + "images/stars.jpg";
 
     this.BG_COLOR = color;
     this.DIM_X = x;

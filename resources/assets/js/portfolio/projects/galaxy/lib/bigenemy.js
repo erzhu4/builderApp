@@ -5,7 +5,7 @@ class BigEnemy extends MovingObject{
 
   constructor(options) {
     var sprite = new Image();
-    sprite.src = "images/portfolio/battlecruiser.png";
+    sprite.src = window.BasePath + "images/battlecruiser.png";
     options.pos = [50 + Math.random() * 0.75 * options.x_dem, 1];
     options.radius = 100;
     options.vel = [0, 2];

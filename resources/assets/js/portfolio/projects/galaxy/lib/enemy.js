@@ -5,7 +5,7 @@ class Enemy extends MovingObject{
 
   constructor(options) {
     var sprite = new Image();
-    sprite.src = ["images/portfolio/enemy.gif", "images/portfolio/enemy2.png"][Math.floor(Math.random() * 2)];
+    sprite.src = [window.BasePath + "images/enemy.gif", window.BasePath + "images/enemy2.png"][Math.floor(Math.random() * 2)];
     options.color = "#009999";
     options.pos = options.pos || [Math.random() * options.x_dem, 1];
     options.radius = 30;

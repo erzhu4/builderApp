@@ -8,7 +8,7 @@ class Explosion extends ExpandingObject{
 		options.game = game;
 
 		var sprite = new Image();
-		sprite.src = "images/portfolio/explosion.png";
+		sprite.src = window.BasePath + "images/explosion.png";
 
 		options.sprite = sprite;
 		options.dem = 20;

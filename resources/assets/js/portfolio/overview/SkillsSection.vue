@@ -6,7 +6,7 @@
                 <div class="col-md-2 col-sm-4">
                     <skill>
                         <section slot="main">
-                            <div class="image" style="background-image: url('images/portfolio/laravel.png')"></div>
+                            <div class="image" :style="{ 'background-image': 'url(' + adjustPath('images/laravel.png') + ')' }"></div>
                         </section>
                         <section slot="secondary">
                             <div class="skill-title">Laravel</div>
@@ -16,7 +16,7 @@
                 <div class="col-md-2 col-sm-4">
                     <skill>
                         <section slot="main">
-                            <div class="image" style="background-image: url('images/portfolio/rails.png')"></div>
+                            <div class="image" :style="{ 'background-image': 'url(' + adjustPath('images/rails.png') + ')' }"></div>
                         </section>
                         <section slot="secondary">
                             <div class="skill-title" style="font-size:1.4rem;">Ruby on Rails</div>
@@ -26,7 +26,7 @@
                 <div class="col-md-2 col-sm-4">
                     <skill>
                         <section slot="main">
-                            <div class="image" style="background-image: url('images/portfolio/vue.png')"></div>
+                            <div class="image" :style="{ 'background-image': 'url(' + adjustPath('images/vue.png') + ')' }"></div>
                         </section>
                         <section slot="secondary">
                             <div class="skill-title">Vue.js</div>
@@ -36,7 +36,7 @@
                 <div class="col-md-2 col-sm-4">
                     <skill>
                         <section slot="main">
-                            <div class="image" style="background-image: url('images/portfolio/react.png')"></div>
+                            <div class="image" :style="{ 'background-image': 'url(' + adjustPath('images/react.png') + ')' }"></div>
                         </section>
                         <section slot="secondary">
                             <div class="skill-title">React.js</div>
@@ -46,7 +46,7 @@
                 <div class="col-md-2 col-sm-4">
                     <skill>
                         <section slot="main">
-                            <div class="image" style="background-image: url('images/portfolio/mysql.png')"></div>
+                            <div class="image" :style="{ 'background-image': 'url(' + adjustPath('images/mysql.png') + ')' }"></div>
                         </section>
                         <section slot="secondary">
                             <div class="skill-title">MySQL</div>
@@ -56,7 +56,7 @@
                 <div class="col-md-2 col-sm-4">
                     <skill>
                         <section slot="main">
-                            <div class="image" style="background-image: url('images/portfolio/postgres.png')"></div>
+                            <div class="image" :style="{ 'background-image': 'url(' + adjustPath('images/postgres.png') + ')' }"></div>
                         </section>
                         <section slot="secondary">
                             <div class="skill-title">PostgreSQL</div>
@@ -68,7 +68,7 @@
                 <div class="col-md-2 col-sm-4">
                     <skill>
                         <section slot="main">
-                            <div class="image" style="background-image: url('images/portfolio/php.png')"></div>
+                            <div class="image" :style="{ 'background-image': 'url(' + adjustPath('images/php.png') + ')' }"></div>
                         </section>
                         <section slot="secondary">
                             <div class="skill-title">PHP</div>
@@ -78,7 +78,7 @@
                 <div class="col-md-2 col-sm-4">
                     <skill>
                         <section slot="main">
-                            <div class="image" style="background-image: url('images/portfolio/ruby.png')"></div>
+                            <div class="image" :style="{ 'background-image': 'url(' + adjustPath('images/ruby.png') + ')' }"></div>
                         </section>
                         <section slot="secondary">
                             <div class="skill-title">Ruby</div>
@@ -88,7 +88,7 @@
                 <div class="col-md-2 col-sm-4">
                     <skill>
                         <section slot="main">
-                            <div class="image" style="background-image: url('images/portfolio/javascript.png')"></div>
+                            <div class="image" :style="{ 'background-image': 'url(' + adjustPath('images/javascript.png') + ')' }"></div>
                         </section>
                         <section slot="secondary">
                             <div class="skill-title">JavaScript</div>
@@ -98,7 +98,7 @@
                 <div class="col-md-2 col-sm-4">
                     <skill>
                         <section slot="main">
-                            <div class="image" style="background-image: url('images/portfolio/css.jpg')"></div>
+                            <div class="image" :style="{ 'background-image': 'url(' + adjustPath('images/css.jpg') + ')' }"></div>
                         </section>
                         <section slot="secondary">
                             <div class="skill-title">CSS</div>
@@ -108,7 +108,7 @@
                 <div class="col-md-2 col-sm-4">
                     <skill>
                         <section slot="main">
-                            <div class="image" style="background-image: url('images/portfolio/vagrant.png')"></div>
+                            <div class="image" :style="{ 'background-image': 'url(' + adjustPath('images/vagrant.png') + ')' }"></div>
                         </section>
                         <section slot="secondary">
                             <div class="skill-title">Vagrant</div>
@@ -118,7 +118,7 @@
                 <div class="col-md-2 col-sm-4">
                     <skill>
                         <section slot="main">
-                            <div class="image" style="background-image: url('images/portfolio/nginx.png')"></div>
+                            <div class="image" :style="{ 'background-image': 'url(' + adjustPath('images/nginx.png') + ')' }"></div>
                         </section>
                         <section slot="secondary">
                             <div class="skill-title">NGINX</div>
@@ -132,9 +132,12 @@
 
 <script>
     import Skill from '../Global/ThumbElement.vue';
+    import AdjustPath from '../Global/AdjustPathMixin.vue';
 
     export default {
-        components: {Skill}
+        components: {Skill},
+
+        mixins: [AdjustPath]
     }
 </script>
 

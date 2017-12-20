@@ -11,7 +11,8 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.copy('resources/images', 'public/images');
+//portfolio in vue
+mix.copy('resources/images/portfolio', 'public/portfolio-vue/images');
 
 mix.copy('resources/assets/css/bootstrap.css', 'public/portfolio-vue/css');
 
@@ -20,4 +21,3 @@ mix.copy('resources/assets/css/font-awesome', 'public/portfolio-vue/css/font-awe
 mix.js('resources/assets/js/bootstrap.js', 'public/portfolio-vue/js');
 
 mix.js('resources/assets/js/portfolio.js', 'public/portfolio-vue/js');
-// mix.react('resources/assets/jsx/portfolio-react.jsx', 'public/js/portfolio-react');

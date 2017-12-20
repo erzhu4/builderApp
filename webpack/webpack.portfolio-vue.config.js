@@ -9,7 +9,7 @@ var vueModule = {
 
     output: {
         filename: 'portfolio.js',
-        path: path.join(__dirname, '../public/portfoliovue/js')
+        path: path.join(__dirname, '../public/portfolio-myvue/js')
     },
 
     module : {

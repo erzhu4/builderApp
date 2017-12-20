@@ -40,9 +40,7 @@
 </template>
 
 <script>
-    import './lib/snake.js';
-    import './lib/board.js';
-    import './lib/snakeView.js';
+    import SnakeGame from './lib/snakeGame.js';
 
     export default {
         mounted(){
@@ -51,6 +49,7 @@
 
         data(){
             return {
+                snakeGame: null,
                 gameRunning: false,
                 gameLost: false
             };
@@ -59,8 +58,7 @@
         methods: {
             startGame(){
                 this.gameRunning = true;
-                var board = new SnakeGame.Board();
-                var view = new SnakeGame.View(board, $('#snake'));
+                this.snakeGame = new SnakeGame();
             },
 
             endGame(){

@@ -20,4 +20,4 @@ mix.copy('resources/assets/css/font-awesome', 'public/portfolio-vue/css/font-awe
 
 mix.js('resources/assets/js/bootstrap.js', 'public/portfolio-vue/js');
 
-mix.js('resources/assets/js/portfolio.js', 'public/portfolio-vue/js');
+mix.js('resources/assets/js/portfolio.js', 'public/portfolio-vue/js/portfolio.js');

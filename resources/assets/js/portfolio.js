@@ -1,10 +1,8 @@
-window.Vue = require('vue');
+import Vue from 'vue';
 
-var portfolioComponent = require('./portfolio/Main.vue');
+import PortfolioComponent from './portfolio/Main.vue';
 
 new Vue({
     el: '#portfolio-vue',
-    components: {
-        portfolio: portfolioComponent
-    }
+    render: h => h(PortfolioComponent)
 });

@@ -11,6 +11,6 @@
         <div id="portfolio-vue">
             <portfolio></portfolio>
         </div>
-        <script src="portfolio-vue/js/portfolio.js"></script>
+        <script src="portfolio-myvue/js/portfolio.js"></script>
     </body>
 </html>

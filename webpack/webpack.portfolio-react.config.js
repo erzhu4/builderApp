@@ -9,7 +9,7 @@ var reactModule = {
 
     output: {
         filename: 'portfolio-react.js',
-        path: path.join(__dirname, '../public/js/portfolio-react')
+        path: path.join(__dirname, '../public/portfolio-react/js')
     },
 
     module : {

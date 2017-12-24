@@ -20,4 +20,14 @@ mix.copy('resources/assets/css/font-awesome', 'public/portfolio-vue/css/font-awe
 
 mix.js('resources/assets/js/bootstrap.js', 'public/portfolio-vue/js');
 
+//portfolio in react
+mix.copy('resources/images/portfolio', 'public/portfolio-react/images');
+
+mix.copy('resources/assets/css/bootstrap.css', 'public/portfolio-react/css');
+
+mix.copy('resources/assets/css/font-awesome', 'public/portfolio-react/css/font-awesome');
+
+mix.js('resources/assets/js/bootstrap.js', 'public/portfolio-react/js');
+
+//portfolio vue main js
 mix.js('resources/assets/js/portfolio.js', 'public/portfolio-vue/js/portfolio.js');

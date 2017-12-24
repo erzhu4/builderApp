@@ -5,10 +5,12 @@ import MainNav from './portfolio/MainNav.jsx';
 
 class Main extends React.Component{
     render(){
-        return (<div>
+        return (
+    	<div>
             <MainNav />
             <div>This is some content</div>
-        </div>);
+        </div>
+        );
     }
 }
 

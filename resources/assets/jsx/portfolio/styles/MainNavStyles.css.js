@@ -15,12 +15,18 @@ export default {
         'align-items': 'center'
     },
 
-    'nav-text': {
+    navText: {
         'margin': 'auto'
     },
 
-    'navTop': {
-        'background-image': 'url("/images/portfolio/mainnav.jpg")',
+    fixNav: {
+        top: 0,
+        position: 'fixed',
+        'z-index': 9999
+    },
+
+    navTop: {
+        'background-image': 'url("portfolio-react/images/mainnav.jpg")',
         'background-size': '100%',
         'background-position': 'center',
         'min-height': '100%',
@@ -28,5 +34,24 @@ export default {
         'display': 'flex',
         'align-items': 'center',
         'height': '200px'
+    },
+
+    picture: {
+        width: '70px',
+        height: '70px',
+        'border-radius': '35px'
+    },
+
+    nameDiv: {
+        'font-size': '50px',
+        'color': 'white',
+        'text-align': 'center',
+        'text-shadow': '2px 2px #5c6ac4'
+    },
+
+    navBottom: {
+        width: '100%',
+        margin: 0,
+        background: '#313131'
     }
 };

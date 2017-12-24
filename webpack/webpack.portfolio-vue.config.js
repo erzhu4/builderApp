@@ -1,22 +1,13 @@
 var webpack = require('webpack');
 var path = require('path');
-//
-// mix.copy('resources/images/portfolio', 'public/portfolio-vue/images');
-//
-// mix.copy('resources/assets/css/bootstrap.css', 'public/portfolio-vue/css');
-//
-// mix.copy('resources/assets/css/font-awesome', 'public/portfolio-vue/css/font-awesome');
 
+var mix = require('laravel-mix');
 
-var images = {
-    entry: [
-        './resources/images/portfolio'
-    ],
-    output: {
-        filename: 'bootstrap.js',
-        path: path.join(__dirname, '../public/portfolio-myvue/images')
-    }
-};
+mix.copy('resources/images/portfolio', '../public/portfolio-myvue/images');
+
+mix.copy('resources/assets/css/bootstrap.css', '../public/portfolio-myvue/css');
+
+mix.copy('resources/assets/css/font-awesome', '../public/portfolio-myvue/css/font-awesome');
 
 var bootstrapModule = {
     entry: [

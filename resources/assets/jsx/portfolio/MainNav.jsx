@@ -1,13 +1,19 @@
 import React from 'react';
 
-import styles from './styles/MainNavStyles.css.js';
+import MainNavStyles from './styles/MainNavStyles.css.js';
 
 class MainNav extends React.Component {
     render() {
         return (
-            <div class="container" style={styles.navTop}>
-                <div class="text-center"><img class="picture" src="/images/portfolio/eric-zhu.jpg"></img></div>
-                <div class="name-div">ERIC ZHU</div>
+        	<div style={MainNavStyles.mainNav}>
+	        	<div class="row" style={MainNavStyles.navTop}>
+		            <div class="container">
+		                <div class="text-center">
+		                	<img style={MainNavStyles.picture} src="portfolio-react/images/eric-zhu.jpg"></img>
+		                </div>
+		                <div style={MainNavStyles.nameDiv}>ERIC ZHU</div>
+		            </div>
+	            </div>
             </div>
         );
     }

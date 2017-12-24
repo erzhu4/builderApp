@@ -1,5 +1,7 @@
 {
     "/portfolio-vue/js/portfolio.js": "/portfolio-vue/js/portfolio.js",
     "/portfolio-vue/js/bootstrap.js": "/portfolio-vue/js/bootstrap.js",
-    "/portfolio-vue/css/bootstrap.css": "/portfolio-vue/css/bootstrap.css"
+    "/portfolio-react/js/bootstrap.js": "/portfolio-react/js/bootstrap.js",
+    "/portfolio-vue/css/bootstrap.css": "/portfolio-vue/css/bootstrap.css",
+    "/portfolio-react/css/bootstrap.css": "/portfolio-react/css/bootstrap.css"
 }

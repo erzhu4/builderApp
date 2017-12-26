@@ -11,10 +11,14 @@ class Main extends React.Component{
         }
     }
 
+    tabChange(val){
+        alert('tab change from parent: ' + val);
+    }
+
     render(){
         return (
             <div>
-                <MainNav currentPage={this.state.currentPage} />
+                <MainNav tabChange={this.tabChange} currentPage={this.state.currentPage} />
                 <div>This is some content</div>
             </div>
         );

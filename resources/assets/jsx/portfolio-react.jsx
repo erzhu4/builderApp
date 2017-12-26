@@ -4,12 +4,19 @@ import ReactDom from 'react-dom';
 import MainNav from './portfolio/MainNav.jsx';
 
 class Main extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            currentPage: 'overview'
+        }
+    }
+
     render(){
         return (
-    	<div>
-            <MainNav />
-            <div>This is some content</div>
-        </div>
+            <div>
+                <MainNav currentPage={this.state.currentPage} />
+                <div>This is some content</div>
+            </div>
         );
     }
 }

@@ -3,6 +3,17 @@ import React from 'react';
 import MainNavStyles from './styles/MainNavStyles.css.js';
 
 class MainNav extends React.Component {
+	constructor(props){
+		super(props);
+		this.state = {
+			currentPage: props.currentPage
+		};
+	}
+
+	tabClick(val){
+		alert(val);
+	}
+
     render() {
         return (
         	<div style={MainNavStyles.mainNav}>
@@ -14,6 +25,24 @@ class MainNav extends React.Component {
 		                <div style={MainNavStyles.nameDiv}>ERIC ZHU</div>
 		            </div>
 	            </div>
+				<div class="row" style={MainNavStyles.navBottom}>
+					<div class="container">
+						<div class="row menu-row visible-md-block visible-lg-block">
+							<div class="col-lg-3" style={MainNavStyles.navButton} onClick={this.tabClick.bind(this, 'overview')}>
+								<div class="nav-text"><i class="fa fa-users" aria-hidden="true"></i> Overview</div>
+							</div>
+							<div class="col-lg-3" style={MainNavStyles.navButton} onClick={this.tabClick.bind(this, 'projects')}>
+								<div class="nav-text"><i class="fa fa-futbol-o" aria-hidden="true"></i> Projects</div>
+							</div>
+							<div class="col-lg-3" style={MainNavStyles.navButton} onClick={this.tabClick.bind(this, 'resume')}>
+								<div class="nav-text"><i class="fa fa-file-image-o" aria-hidden="true"></i> Resume</div>
+							</div>
+							<div class="col-lg-3" style={MainNavStyles.navButton} onClick={this.tabClick.bind(this, 'contact')}>
+								<div class="nav-text"><i class="fa fa-paper-plane" aria-hidden="true"></i> Contact</div>
+							</div>
+						</div>
+					</div>
+				</div>
             </div>
         );
     }

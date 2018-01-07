@@ -40,7 +40,7 @@
 </template>
 
 <script>
-    import SnakeGame from './lib/snakeGame.js';
+    import SnakeGame from '../../../snake/lib/snakeGame.js';
 
     export default {
         mounted(){

@@ -40,7 +40,7 @@
 </template>
 
 <script>
-    import GalaxyGame from './lib/galaxy.js';
+    import GalaxyGame from '../../../galaxy/lib/galaxy.js';
 
     export default {
         data(){

@@ -1,13 +1,13 @@
 var webpack = require('webpack');
 var path = require('path');
 
-var mix = require('laravel-mix');
-
-mix.copy('resources/images/portfolio', '../public/portfolio-myvue/images');
-
-mix.copy('resources/assets/css/bootstrap.css', '../public/portfolio-myvue/css');
-
-mix.copy('resources/assets/css/font-awesome', '../public/portfolio-myvue/css/font-awesome');
+// var mix = require('laravel-mix');
+//
+// mix.copy('resources/images/portfolio', '../public/portfolio-myvue/images');
+//
+// mix.copy('resources/assets/css/bootstrap.css', '../public/portfolio-myvue/css');
+//
+// mix.copy('resources/assets/css/font-awesome', '../public/portfolio-myvue/css/font-awesome');
 
 var bootstrapModule = {
     entry: [
